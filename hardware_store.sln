@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hardware_store", "hardware_store\hardware_store.csproj", "{1DF16087-E625-4164-81FB-2C1804FFF623}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1DF16087-E625-4164-81FB-2C1804FFF623}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF16087-E625-4164-81FB-2C1804FFF623}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF16087-E625-4164-81FB-2C1804FFF623}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF16087-E625-4164-81FB-2C1804FFF623}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DEF03A41-7395-4EEC-B42C-BC216F99542F}
+	EndGlobalSection
+EndGlobal
