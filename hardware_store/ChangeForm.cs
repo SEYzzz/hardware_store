@@ -10,18 +10,21 @@ using System.Windows.Forms;
 
 namespace hardware_store
 {
-    public partial class InfoCard : Form
+    public partial class ChangeForm : Form
     {
-        public InfoCard()
+        public ChangeForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public ChangeForm(InfoCard card)
         {
-            ChangeForm changeForm = new ChangeForm();
-            changeForm.Show();
+            InitializeComponent();
         }
 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
