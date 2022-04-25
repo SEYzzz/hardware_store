@@ -1,7 +1,7 @@
 ﻿
 namespace hardware_store
 {
-    partial class ChangeForm
+    partial class ChangeCreateForm
     {
         /// <summary>
         /// Required designer variable.

@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace hardware_store
 {
-    public partial class ChangeForm : Form
+    public partial class ChangeCreateForm : Form
     {
-        public ChangeForm()
+        public ChangeCreateForm()
         {
             InitializeComponent();
         }
 
-        public ChangeForm(InfoCard card)
+        public ChangeCreateForm(InfoCard card)
         {
             InitializeComponent();
         }

@@ -19,7 +19,7 @@ namespace hardware_store
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ChangeForm changeForm = new ChangeForm();
+            ChangeCreateForm changeForm = new ChangeCreateForm();
             changeForm.Show();
         }
 

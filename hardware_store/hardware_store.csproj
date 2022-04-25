@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChangeForm.cs">
+    <Compile Include="ChangeCreateForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeForm.Designer.cs">
-      <DependentUpon>ChangeForm.cs</DependentUpon>
+    <Compile Include="ChangeCreateForm.Designer.cs">
+      <DependentUpon>ChangeCreateForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InfoCard.cs">
       <SubType>Form</SubType>
@@ -74,8 +74,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ChangeForm.resx">
-      <DependentUpon>ChangeForm.cs</DependentUpon>
+    <EmbeddedResource Include="ChangeCreateForm.resx">
+      <DependentUpon>ChangeCreateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InfoCard.resx">
       <DependentUpon>InfoCard.cs</DependentUpon>
