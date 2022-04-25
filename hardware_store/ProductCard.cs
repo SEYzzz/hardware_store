@@ -81,6 +81,7 @@ namespace hardware_store
             panel.Controls.Add(icon);
 
             ToOrder.Click += ToOrder_Click;
+            Info.Click += Info_Click;
         }
 
         public ProductCard()
@@ -111,6 +112,16 @@ namespace hardware_store
             //order.picBox.Image = card.pic.Image;
 
         }
+        public void Info_Click(object sender, EventArgs e)
+        {
+            InfoCard infoCard = new InfoCard();
+            infoCard.Show();
+
+            infoCard.pictureBox1.Image = this.pic.Image;
+            infoCard.lblName.Text = infoCard.lblName.Text + " " + this.name.Text;
+
+        }
+
 
     }
 }
