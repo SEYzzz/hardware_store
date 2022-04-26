@@ -18,6 +18,7 @@ namespace hardware_store
         public PictureBox pic;
         public Label icon;
         public static List<ProductCard> cards = new List<ProductCard>();
+        //public int id { get; private set; }
 
         private void Initialize()
         {
@@ -113,6 +114,9 @@ namespace hardware_store
             else
             {
                 //удалять из листа и панели;
+                Button button = sender as Button;
+                
+
             }
 
         }

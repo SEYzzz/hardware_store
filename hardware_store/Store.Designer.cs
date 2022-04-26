@@ -36,6 +36,8 @@ namespace hardware_store
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblStuff = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnGruopDelete = new System.Windows.Forms.Button();
+            this.btnGroupAdd = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelToOrder = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@ namespace hardware_store
             this.panelDockStat = new System.Windows.Forms.Panel();
             this.btnReport = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnGroupAdd = new System.Windows.Forms.Button();
-            this.btnGruopDelete = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -118,9 +118,9 @@ namespace hardware_store
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(202)))), ((int)(((byte)(135)))));
-            this.btnAdd.Location = new System.Drawing.Point(1280, 24);
+            this.btnAdd.Location = new System.Drawing.Point(1280, 25);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(74, 65);
+            this.btnAdd.Size = new System.Drawing.Size(74, 68);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -148,6 +148,37 @@ namespace hardware_store
             this.panel2.Size = new System.Drawing.Size(200, 718);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // btnGruopDelete
+            // 
+            this.btnGruopDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGruopDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.btnGruopDelete.FlatAppearance.BorderSize = 0;
+            this.btnGruopDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGruopDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnGruopDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
+            this.btnGruopDelete.Location = new System.Drawing.Point(83, 670);
+            this.btnGruopDelete.Name = "btnGruopDelete";
+            this.btnGruopDelete.Size = new System.Drawing.Size(53, 43);
+            this.btnGruopDelete.TabIndex = 1;
+            this.btnGruopDelete.Text = "-";
+            this.btnGruopDelete.UseVisualStyleBackColor = false;
+            // 
+            // btnGroupAdd
+            // 
+            this.btnGroupAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGroupAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.btnGroupAdd.FlatAppearance.BorderSize = 0;
+            this.btnGroupAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGroupAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnGroupAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(238)))), ((int)(((byte)(141)))));
+            this.btnGroupAdd.Location = new System.Drawing.Point(142, 670);
+            this.btnGroupAdd.Name = "btnGroupAdd";
+            this.btnGroupAdd.Size = new System.Drawing.Size(52, 43);
+            this.btnGroupAdd.TabIndex = 0;
+            this.btnGroupAdd.Text = "+";
+            this.btnGroupAdd.UseVisualStyleBackColor = false;
+            this.btnGroupAdd.Click += new System.EventHandler(this.btnGroupAdd_Click);
             // 
             // tabPage2
             // 
@@ -237,36 +268,6 @@ namespace hardware_store
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // btnGroupAdd
-            // 
-            this.btnGroupAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGroupAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.btnGroupAdd.FlatAppearance.BorderSize = 0;
-            this.btnGroupAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGroupAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnGroupAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(238)))), ((int)(((byte)(141)))));
-            this.btnGroupAdd.Location = new System.Drawing.Point(142, 670);
-            this.btnGroupAdd.Name = "btnGroupAdd";
-            this.btnGroupAdd.Size = new System.Drawing.Size(52, 43);
-            this.btnGroupAdd.TabIndex = 0;
-            this.btnGroupAdd.Text = "+";
-            this.btnGroupAdd.UseVisualStyleBackColor = false;
-            // 
-            // btnGruopDelete
-            // 
-            this.btnGruopDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGruopDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.btnGruopDelete.FlatAppearance.BorderSize = 0;
-            this.btnGruopDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGruopDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnGruopDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
-            this.btnGruopDelete.Location = new System.Drawing.Point(83, 670);
-            this.btnGruopDelete.Name = "btnGruopDelete";
-            this.btnGruopDelete.Size = new System.Drawing.Size(53, 43);
-            this.btnGruopDelete.TabIndex = 1;
-            this.btnGruopDelete.Text = "-";
-            this.btnGruopDelete.UseVisualStyleBackColor = false;
-            // 
             // Store
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -293,9 +294,9 @@ namespace hardware_store
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.TabControl tabControl1;
+        public System.Windows.Forms.TabPage tabPage1;
+        public System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel2;

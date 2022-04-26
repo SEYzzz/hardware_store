@@ -27,7 +27,12 @@ namespace hardware_store
         {
             ProductCard card = new ProductCard();
             ProductCard.cards.Add(card);
-            panel1.Controls.Add(card.GetProductCard());
+
+            foreach (ProductCard card1 in ProductCard.cards)
+            {
+                panel1.Controls.Add(card1.GetProductCard());
+            }
+
 
             OrderCard orderCard = new OrderCard();
             panelToOrder.Controls.Add(orderCard.GetOrderCard());
@@ -47,6 +52,13 @@ namespace hardware_store
         private void Store_Resize(object sender, EventArgs e)
         {
             //метод для перерисовки панелей в панели;
+
+            //панель товаров;
+
+
+            //панель заказ товаров;
+
+
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -63,6 +75,7 @@ namespace hardware_store
                 foreach (ProductCard card in ProductCard.cards)
                 {
                     card.ToOrder.Text = "Заказать";
+                    card.ToOrder.ForeColor = Color.White;
                 }
 
                 btnDelete_isClicked = false;
@@ -83,6 +96,7 @@ namespace hardware_store
                 foreach(ProductCard card in ProductCard.cards)
                 {
                     card.ToOrder.Text = "Удалить";
+                    card.ToOrder.ForeColor = Color.FromArgb(255, 136, 123);
                 }
                 
             }
@@ -91,8 +105,12 @@ namespace hardware_store
 
             }
 
+        }
 
-
+        private void btnGroupAdd_Click(object sender, EventArgs e)
+        {
+            CreateGroup createGroup = new CreateGroup();
+            createGroup.Show();
         }
     }
 }
