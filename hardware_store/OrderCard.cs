@@ -39,7 +39,7 @@ namespace hardware_store
 
             //panel;
             panel.BackColor = Color.FromArgb(194, 215, 210);
-            panel.Size = new Size(1500, 120);
+            //panel.Size = new Size(1500, 120);
             panel.Location = new Point(10, 10);
 
             //ToAccept;
@@ -47,18 +47,20 @@ namespace hardware_store
             ToAccept.Text = "Принять";
             ToAccept.BackColor = Color.FromArgb(165, 202, 135);
             ToAccept.Size = new Size(100, 30);
-            ToAccept.Location = new Point(1000, 20);
+            //ToAccept.Location = new Point(1000, 20);
             ToAccept.FlatAppearance.BorderSize = 0;
             ToAccept.FlatStyle = FlatStyle.Flat;
+            ToAccept.Anchor = AnchorStyles.Right;
 
             //ToReject;
             ToReject.ForeColor = Color.White;
             ToReject.Text = "Отклонить";
             ToReject.BackColor = Color.FromArgb(255, 136, 123);
             ToReject.Size = new Size(100, 30);
-            ToReject.Location = new Point(1000, 60);
+            //ToReject.Location = new Point(1000, 60);
             ToReject.FlatAppearance.BorderSize = 0;
             ToReject.FlatStyle = FlatStyle.Flat;
+            ToReject.Anchor = AnchorStyles.Right;
 
             //name;
             name.Text = "Название товара:";

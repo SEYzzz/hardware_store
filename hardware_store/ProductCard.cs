@@ -17,8 +17,9 @@ namespace hardware_store
         public Label name;
         public PictureBox pic;
         public Label icon;
-        public static List<ProductCard> cards = new List<ProductCard>();
-        //public int id { get; private set; }
+
+
+        public int id { get; private set; }
 
         private void Initialize()
         {
@@ -42,7 +43,6 @@ namespace hardware_store
             ToOrder.Location = new Point(15, 40);
             ToOrder.FlatAppearance.BorderSize = 0;
             ToOrder.FlatStyle = FlatStyle.Flat;
-            ToOrder.Tag = this;
 
             //Info;
             Info.Text = "i";
@@ -106,7 +106,7 @@ namespace hardware_store
             if (ToOrder.Text.Equals("Заказать"))
             {
                 Order order = new Order();
-                order.Show();
+                order.ShowDialog();
 
                 order.picBox.Image = this.pic.Image;
                 order.lblName.Text = order.lblName.Text + " " + this.name.Text;
@@ -123,7 +123,7 @@ namespace hardware_store
         public void Info_Click(object sender, EventArgs e)
         {
             InfoCard infoCard = new InfoCard();
-            infoCard.Show();
+            infoCard.ShowDialog();
 
             infoCard.pictureBox1.Image = this.pic.Image;
             infoCard.lblName.Text = infoCard.lblName.Text + " " + this.name.Text;

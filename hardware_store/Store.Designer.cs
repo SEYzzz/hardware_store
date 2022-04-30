@@ -32,10 +32,13 @@ namespace hardware_store
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDown = new System.Windows.Forms.Button();
+            this.btnUp = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.lblStuff = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chekListGroups = new System.Windows.Forms.CheckedListBox();
             this.btnGruopDelete = new System.Windows.Forms.Button();
             this.btnGroupAdd = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -43,6 +46,7 @@ namespace hardware_store
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panelLeftStat = new System.Windows.Forms.Panel();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panelDockStat = new System.Windows.Forms.Panel();
             this.btnReport = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -53,6 +57,7 @@ namespace hardware_store
             this.tabPage2.SuspendLayout();
             this.panelToOrder.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.panelLeftStat.SuspendLayout();
             this.panelDockStat.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +72,7 @@ namespace hardware_store
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1582, 753);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
             // tabPage1
             // 
@@ -84,6 +90,8 @@ namespace hardware_store
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
+            this.panel1.Controls.Add(this.btnDown);
+            this.panel1.Controls.Add(this.btnUp);
             this.panel1.Controls.Add(this.btnDelete);
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.lblStuff);
@@ -92,6 +100,39 @@ namespace hardware_store
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1368, 718);
             this.panel1.TabIndex = 0;
+            this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
+            // 
+            // btnDown
+            // 
+            this.btnDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDown.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.btnDown.FlatAppearance.BorderSize = 0;
+            this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
+            this.btnDown.Location = new System.Drawing.Point(1280, 638);
+            this.btnDown.Name = "btnDown";
+            this.btnDown.Size = new System.Drawing.Size(74, 75);
+            this.btnDown.TabIndex = 4;
+            this.btnDown.Text = "ᐯ";
+            this.btnDown.UseVisualStyleBackColor = false;
+            this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
+            // 
+            // btnUp
+            // 
+            this.btnUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.btnUp.FlatAppearance.BorderSize = 0;
+            this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
+            this.btnUp.Location = new System.Drawing.Point(1280, 542);
+            this.btnUp.Name = "btnUp";
+            this.btnUp.Size = new System.Drawing.Size(74, 70);
+            this.btnUp.TabIndex = 3;
+            this.btnUp.Text = "ᐱ";
+            this.btnUp.UseVisualStyleBackColor = false;
+            this.btnUp.Click += new System.EventHandler(this.btnUp_Click);
             // 
             // btnDelete
             // 
@@ -103,7 +144,7 @@ namespace hardware_store
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(136)))), ((int)(((byte)(123)))));
             this.btnDelete.Location = new System.Drawing.Point(1280, 119);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(74, 67);
+            this.btnDelete.Size = new System.Drawing.Size(74, 68);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "-";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -140,6 +181,7 @@ namespace hardware_store
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(215)))), ((int)(((byte)(210)))));
+            this.panel2.Controls.Add(this.chekListGroups);
             this.panel2.Controls.Add(this.btnGruopDelete);
             this.panel2.Controls.Add(this.btnGroupAdd);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -148,6 +190,19 @@ namespace hardware_store
             this.panel2.Size = new System.Drawing.Size(200, 718);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // chekListGroups
+            // 
+            this.chekListGroups.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(215)))), ((int)(((byte)(210)))));
+            this.chekListGroups.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.chekListGroups.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.chekListGroups.FormattingEnabled = true;
+            this.chekListGroups.Items.AddRange(new object[] {
+            "Болты"});
+            this.chekListGroups.Location = new System.Drawing.Point(3, 3);
+            this.chekListGroups.Name = "chekListGroups";
+            this.chekListGroups.Size = new System.Drawing.Size(136, 646);
+            this.chekListGroups.TabIndex = 2;
             // 
             // btnGruopDelete
             // 
@@ -199,6 +254,7 @@ namespace hardware_store
             this.panelToOrder.Name = "panelToOrder";
             this.panelToOrder.Size = new System.Drawing.Size(1568, 718);
             this.panelToOrder.TabIndex = 0;
+            this.panelToOrder.Resize += new System.EventHandler(this.tabControl1_Selected);
             // 
             // label1
             // 
@@ -227,12 +283,26 @@ namespace hardware_store
             // panelLeftStat
             // 
             this.panelLeftStat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(215)))), ((int)(((byte)(210)))));
+            this.panelLeftStat.Controls.Add(this.checkedListBox1);
             this.panelLeftStat.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftStat.Location = new System.Drawing.Point(3, 3);
             this.panelLeftStat.Name = "panelLeftStat";
             this.panelLeftStat.Size = new System.Drawing.Size(200, 718);
             this.panelLeftStat.TabIndex = 1;
             this.panelLeftStat.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeftStat_Paint);
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(215)))), ((int)(((byte)(210)))));
+            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Болты"});
+            this.checkedListBox1.Location = new System.Drawing.Point(5, 3);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(171, 663);
+            this.checkedListBox1.TabIndex = 0;
             // 
             // panelDockStat
             // 
@@ -287,6 +357,7 @@ namespace hardware_store
             this.panelToOrder.ResumeLayout(false);
             this.panelToOrder.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            this.panelLeftStat.ResumeLayout(false);
             this.panelDockStat.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -311,6 +382,10 @@ namespace hardware_store
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnGruopDelete;
         private System.Windows.Forms.Button btnGroupAdd;
+        private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Button btnUp;
+        public System.Windows.Forms.CheckedListBox chekListGroups;
+        public System.Windows.Forms.CheckedListBox checkedListBox1;
     }
 }
 

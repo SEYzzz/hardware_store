@@ -52,6 +52,7 @@ namespace hardware_store
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(175, 22);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnCreate
             // 
@@ -66,6 +67,7 @@ namespace hardware_store
             this.btnCreate.TabIndex = 2;
             this.btnCreate.Text = "Создать";
             this.btnCreate.UseVisualStyleBackColor = false;
+            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // btnCancel
             // 
@@ -80,6 +82,7 @@ namespace hardware_store
             this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // CreateGroup
             // 
