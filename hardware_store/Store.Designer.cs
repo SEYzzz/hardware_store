@@ -43,11 +43,15 @@ namespace hardware_store
             this.btnGroupAdd = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panelToOrder = new System.Windows.Forms.Panel();
+            this.btnUp2 = new System.Windows.Forms.Button();
+            this.btnDown2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panelLeftStat = new System.Windows.Forms.Panel();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.panelDockStat = new System.Windows.Forms.Panel();
+            this.btnUp3 = new System.Windows.Forms.Button();
+            this.btnDown3 = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
@@ -248,6 +252,8 @@ namespace hardware_store
             // 
             // panelToOrder
             // 
+            this.panelToOrder.Controls.Add(this.btnUp2);
+            this.panelToOrder.Controls.Add(this.btnDown2);
             this.panelToOrder.Controls.Add(this.label1);
             this.panelToOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelToOrder.Location = new System.Drawing.Point(3, 3);
@@ -255,6 +261,38 @@ namespace hardware_store
             this.panelToOrder.Size = new System.Drawing.Size(1568, 718);
             this.panelToOrder.TabIndex = 0;
             this.panelToOrder.Resize += new System.EventHandler(this.tabControl1_Selected);
+            // 
+            // btnUp2
+            // 
+            this.btnUp2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUp2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.btnUp2.FlatAppearance.BorderSize = 0;
+            this.btnUp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUp2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
+            this.btnUp2.Location = new System.Drawing.Point(1509, 609);
+            this.btnUp2.Name = "btnUp2";
+            this.btnUp2.Size = new System.Drawing.Size(54, 50);
+            this.btnUp2.TabIndex = 2;
+            this.btnUp2.Text = "ᐱ";
+            this.btnUp2.UseVisualStyleBackColor = false;
+            this.btnUp2.Click += new System.EventHandler(this.btnUp2_Click);
+            // 
+            // btnDown2
+            // 
+            this.btnDown2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDown2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.btnDown2.FlatAppearance.BorderSize = 0;
+            this.btnDown2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDown2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
+            this.btnDown2.Location = new System.Drawing.Point(1509, 665);
+            this.btnDown2.Name = "btnDown2";
+            this.btnDown2.Size = new System.Drawing.Size(54, 50);
+            this.btnDown2.TabIndex = 1;
+            this.btnDown2.Text = "ᐯ";
+            this.btnDown2.UseVisualStyleBackColor = false;
+            this.btnDown2.Click += new System.EventHandler(this.btnDown2_Click);
             // 
             // label1
             // 
@@ -307,6 +345,8 @@ namespace hardware_store
             // panelDockStat
             // 
             this.panelDockStat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
+            this.panelDockStat.Controls.Add(this.btnUp3);
+            this.panelDockStat.Controls.Add(this.btnDown3);
             this.panelDockStat.Controls.Add(this.btnReport);
             this.panelDockStat.Controls.Add(this.button1);
             this.panelDockStat.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -315,6 +355,36 @@ namespace hardware_store
             this.panelDockStat.Size = new System.Drawing.Size(1568, 718);
             this.panelDockStat.TabIndex = 0;
             // 
+            // btnUp3
+            // 
+            this.btnUp3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnUp3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.btnUp3.FlatAppearance.BorderSize = 0;
+            this.btnUp3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUp3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUp3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
+            this.btnUp3.Location = new System.Drawing.Point(1503, 592);
+            this.btnUp3.Name = "btnUp3";
+            this.btnUp3.Size = new System.Drawing.Size(60, 60);
+            this.btnUp3.TabIndex = 3;
+            this.btnUp3.Text = "ᐱ";
+            this.btnUp3.UseVisualStyleBackColor = false;
+            // 
+            // btnDown3
+            // 
+            this.btnDown3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnDown3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.btnDown3.FlatAppearance.BorderSize = 0;
+            this.btnDown3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnDown3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
+            this.btnDown3.Location = new System.Drawing.Point(1503, 658);
+            this.btnDown3.Name = "btnDown3";
+            this.btnDown3.Size = new System.Drawing.Size(60, 60);
+            this.btnDown3.TabIndex = 2;
+            this.btnDown3.Text = "ᐯ";
+            this.btnDown3.UseVisualStyleBackColor = false;
+            // 
             // btnReport
             // 
             this.btnReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -322,7 +392,7 @@ namespace hardware_store
             this.btnReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.btnReport.Location = new System.Drawing.Point(1273, 661);
+            this.btnReport.Location = new System.Drawing.Point(1330, 661);
             this.btnReport.Name = "btnReport";
             this.btnReport.Size = new System.Drawing.Size(167, 54);
             this.btnReport.TabIndex = 1;
@@ -347,7 +417,6 @@ namespace hardware_store
             this.MinimumSize = new System.Drawing.Size(1600, 800);
             this.Name = "Store";
             this.Text = "Store";
-            this.Resize += new System.EventHandler(this.Store_Resize);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -386,6 +455,10 @@ namespace hardware_store
         private System.Windows.Forms.Button btnUp;
         public System.Windows.Forms.CheckedListBox chekListGroups;
         public System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Button btnUp2;
+        private System.Windows.Forms.Button btnDown2;
+        private System.Windows.Forms.Button btnUp3;
+        private System.Windows.Forms.Button btnDown3;
     }
 }
 

@@ -18,6 +18,7 @@ namespace hardware_store
         public PictureBox pic;
         public Label count;
         public Label date_Order;
+        public ProductCard card;
 
         public DateTime order_date { get; private set; }
         public int ord_count { get; private set; }
@@ -106,6 +107,12 @@ namespace hardware_store
         public OrderCard()
         {
             Initialize();
+        }
+        public OrderCard(ProductCard card)
+        {
+            Initialize();
+            this.card = card;
+            name = card.name;
         }
 
         public Panel GetOrderCard()

@@ -15,19 +15,28 @@ namespace hardware_store
         bool btnDelete_isClicked = false;
         bool btnGroup_isClicked = false;
 
-        private int Hight = 4;
-        private int Wigth = 2;
+        //для ProductCard
+        private int ProductCard_Hight = 4;
+        private int ProductCard_Wigth = 2;
         private int FirstProductCard = 0;
 
+        //for OrderCard
+        private int Order_Hight = 3;
+        private int FirstOrderCard = 0;
+
         List<OrderCard> orderCards = new List<OrderCard>();
+        List<OrderCard> order_on_panel = new List<OrderCard>();
+
         List<ProductCard> productCards = new List<ProductCard>();
         List<ProductCard> products_panel = new List<ProductCard>();
+
 
         public Store()
         {
             InitializeComponent();
             Bl();
         }
+
 
         //вывод;
         public void Bl()
@@ -39,11 +48,18 @@ namespace hardware_store
             }
             ProductCardsToPanel();
 
+            for (int i = 0; i < 10; i++)
+            {
+                orderCards.Add(new OrderCard());
+                orderCards.Last().name.Text += i;
+            }
+            
+
         }
         private void ProductCardsToPanel()
         {
-            int X = Wigth;
-            int Y = Hight;
+            int X = ProductCard_Wigth;
+            int Y = ProductCard_Hight;
             for (int y = 0; y < Y; y++)
             {
                 for (int x = 0; x < X; x++)
@@ -67,18 +83,7 @@ namespace hardware_store
             ControlPaint.DrawBorder(e.Graphics, this.panel2.ClientRectangle, Color.FromArgb(92, 136, 137), ButtonBorderStyle.Solid);
         }
 
-        private void Store_Resize(object sender, EventArgs e)
-        {
-            //метод для перерисовки панелей в панели;
-
-            //панель товаров;
-
-
-            //панель заказ товаров;
-
-
-        }
-
+        //кнопки добавить и удалить для ProductCards;
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (!btnDelete_isClicked)
@@ -120,7 +125,7 @@ namespace hardware_store
             }
             else
             {
-
+                
             }
 
         }
@@ -134,24 +139,31 @@ namespace hardware_store
         //вывод на панель OrderCard;
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
-            int i = 10;
-            foreach(OrderCard order in orderCards)
-            {
-                order.panel.Size = new Size(Size.Width-80, 120);
-                order.panel.Location = new Point(10, i);
-                order.ToAccept.Location = new Point(order.panel.Size.Width-150, 20);
-                order.ToReject.Location = new Point(order.panel.Size.Width - 150, 60);
-                i += 130;
-            }
+            PaintOrderPanels();
         }
         private void tabControl1_Selected(object sender, EventArgs e)
         {
-            foreach (OrderCard order in orderCards)
+            Clear_Order();
+            Order_Hight = (panelToOrder.Height - 70) / 130;
+            PaintOrderPanels();
+        }
+        private void PaintOrderPanels()
+        {
+            int j = 10;
+            for (int i = FirstOrderCard; i < FirstOrderCard + Order_Hight && i < orderCards.Count; i++)
             {
-                order.panel.Size = new Size(Size.Width - 80, 120);
+                orderCards[i].panel.Size = new Size(panelToOrder.Size.Width - 80, 120);
+                orderCards[i].panel.Location = new Point(10, j);
+                orderCards[i].ToAccept.Location = new Point(orderCards[i].panel.Size.Width - 150, 20);
+                orderCards[i].ToReject.Location = new Point(orderCards[i].panel.Size.Width - 150, 60);
+                j += 130;
+                order_on_panel.Add(orderCards[i]);
+                panelToOrder.Controls.Add(orderCards[i].GetOrderCard());
             }
         }
 
+
+        //изменение размеров;
         private void Clear()
         {
             foreach(ProductCard card in products_panel)
@@ -160,28 +172,53 @@ namespace hardware_store
             }
             products_panel.Clear();
         }
-
         private void panel1_Resize(object sender, EventArgs e)
         {
-            Wigth = (panel1.Size.Width - 120) / 195;
-            Hight = (panel1.Size.Height - 70) / 250;
+            ProductCard_Wigth = (panel1.Size.Width - 120) / 195;
+            ProductCard_Hight = (panel1.Size.Height - 70) / 250;
             Clear();
             ProductCardsToPanel();
         }
 
+        //кнопки листания вверх и вниз для ProductCards;
         private void btnUp_Click(object sender, EventArgs e)
         {
-            FirstProductCard -= Hight * Wigth;
+            FirstProductCard -= ProductCard_Hight * ProductCard_Wigth;
             FirstProductCard = FirstProductCard < 0 ? 0 : FirstProductCard;
             Clear();
             ProductCardsToPanel();
         }
         private void btnDown_Click(object sender, EventArgs e)
         {
-            FirstProductCard += Hight * Wigth;
-            FirstProductCard = FirstProductCard >= productCards.Count ? productCards.Count - Hight * Wigth : FirstProductCard;
+            FirstProductCard += ProductCard_Hight * ProductCard_Wigth;
+            FirstProductCard = FirstProductCard >= productCards.Count ? productCards.Count - ProductCard_Hight * ProductCard_Wigth : FirstProductCard;
             Clear();
             ProductCardsToPanel();
         }
+
+        //кнопки листания вверх и вниз для OrderCard;
+        private void Clear_Order()
+        {
+            foreach(OrderCard order in order_on_panel)
+            {
+                panelToOrder.Controls.Remove(order.GetOrderCard());
+            }
+            order_on_panel.Clear();
+        }
+        private void btnUp2_Click(object sender, EventArgs e)
+        {
+            FirstOrderCard -= Order_Hight;
+            FirstOrderCard = FirstOrderCard < 0 ? 0 : FirstOrderCard;
+            Clear_Order();
+            PaintOrderPanels();
+        }
+        private void btnDown2_Click(object sender, EventArgs e)
+        {
+            FirstOrderCard += Order_Hight;
+            FirstOrderCard = FirstOrderCard > orderCards.Count ? FirstOrderCard - Order_Hight : FirstOrderCard;
+            Clear_Order();
+            PaintOrderPanels();
+        }
+
     }
 }

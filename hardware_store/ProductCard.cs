@@ -18,7 +18,6 @@ namespace hardware_store
         public PictureBox pic;
         public Label icon;
 
-
         public int id { get; private set; }
 
         private void Initialize()
@@ -115,6 +114,7 @@ namespace hardware_store
             {
                 //удалять из листа и панели;
                 Button button = sender as Button;
+
                 
 
             }
