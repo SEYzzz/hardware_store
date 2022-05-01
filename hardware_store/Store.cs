@@ -30,6 +30,9 @@ namespace hardware_store
         List<ProductCard> productCards = new List<ProductCard>();
         List<ProductCard> products_panel = new List<ProductCard>();
 
+        List<String> groups = new List<string>();
+        
+        
 
         public Store()
         {
@@ -86,7 +89,8 @@ namespace hardware_store
         //кнопки добавить и удалить для ProductCards;
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (!btnDelete_isClicked)
+            Button button = sender as Button;
+            if (button.Text.Equals("+"))
             {
                 ChangeCreateForm createForm = new ChangeCreateForm();
                 createForm.ShowDialog();
@@ -99,18 +103,19 @@ namespace hardware_store
                 {
                     card.ToOrder.Text = "Заказать";
                     card.ToOrder.ForeColor = Color.White;
+                    card.ToOrder.BackColor = Color.FromArgb(116, 142, 95);
                 }
 
-                btnDelete_isClicked = false;
+                //btnDelete_isClicked = false;
 
             }
 
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (!btnDelete_isClicked)
+            Button button = sender as Button;
+            if (button.Text.Equals("-"))
             {
-                Button button = sender as Button;
                 btnDelete_isClicked = true;
 
                 button.Text = "✓";
@@ -125,7 +130,24 @@ namespace hardware_store
             }
             else
             {
-                
+                for (int i = 0; i < productCards.Count; i++)
+                {
+                    if (productCards[i].IsOnDelete == true)
+                    {
+                        products_panel.Remove(productCards[i]);
+                        productCards.Remove(productCards[i]);
+                        panel1.Controls.Remove(productCards[i].GetProductCard());
+                    }
+                }
+                for (int i = 0; i < productCards.Count; i++)
+                {
+                    if (productCards[i].IsOnDelete == true)
+                    {
+                        productCards[i].IsOnDelete = false;
+                    }
+                }
+                ClearProductCards();
+                ProductCardsToPanel();
             }
 
         }
@@ -164,7 +186,7 @@ namespace hardware_store
 
 
         //изменение размеров;
-        private void Clear()
+        private void ClearProductCards()
         {
             foreach(ProductCard card in products_panel)
             {
@@ -176,7 +198,7 @@ namespace hardware_store
         {
             ProductCard_Wigth = (panel1.Size.Width - 120) / 195;
             ProductCard_Hight = (panel1.Size.Height - 70) / 250;
-            Clear();
+            ClearProductCards();
             ProductCardsToPanel();
         }
 
@@ -185,14 +207,14 @@ namespace hardware_store
         {
             FirstProductCard -= ProductCard_Hight * ProductCard_Wigth;
             FirstProductCard = FirstProductCard < 0 ? 0 : FirstProductCard;
-            Clear();
+            ClearProductCards();
             ProductCardsToPanel();
         }
         private void btnDown_Click(object sender, EventArgs e)
         {
             FirstProductCard += ProductCard_Hight * ProductCard_Wigth;
             FirstProductCard = FirstProductCard >= productCards.Count ? productCards.Count - ProductCard_Hight * ProductCard_Wigth : FirstProductCard;
-            Clear();
+            ClearProductCards();
             ProductCardsToPanel();
         }
 

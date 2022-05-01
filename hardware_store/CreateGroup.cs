@@ -29,6 +29,7 @@ namespace hardware_store
             if ((textBox1.TextLength != 0) && (store.checkedListBox1.Items.Contains(textBox1.Text) == false) && textBox1.Text.Any(Char.IsLetter))
             {
                 store.chekListGroups.Items.Add(textBox1.Text);
+                store.checkedListBox1.Items.Add(textBox1.Text);
                 Close();
             }
         }

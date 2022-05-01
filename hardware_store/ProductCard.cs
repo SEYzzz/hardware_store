@@ -18,7 +18,9 @@ namespace hardware_store
         public PictureBox pic;
         public Label icon;
 
+        public static List<ProductCard> onDelete { get; set; }
         public int id { get; private set; }
+        public bool IsOnDelete { get; set; } 
 
         private void Initialize()
         {
@@ -28,6 +30,8 @@ namespace hardware_store
             name = new Label();
             pic = new PictureBox();
             icon = new Label();
+            onDelete = new List<ProductCard>();
+            IsOnDelete = false;
 
             //panel;
             panel.BackColor = Color.FromArgb(194, 215, 210);
@@ -42,6 +46,7 @@ namespace hardware_store
             ToOrder.Location = new Point(15, 40);
             ToOrder.FlatAppearance.BorderSize = 0;
             ToOrder.FlatStyle = FlatStyle.Flat;
+            ToOrder.Tag = this;
 
             //Info;
             Info.Text = "i";
@@ -114,8 +119,10 @@ namespace hardware_store
             {
                 //удалять из листа и панели;
                 Button button = sender as Button;
+                button.BackColor = Color.FromArgb(252, 238, 141);
 
-                
+                ProductCard order = button.Tag as ProductCard;
+                order.IsOnDelete = true;
 
             }
 
