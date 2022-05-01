@@ -104,6 +104,8 @@ namespace hardware_store
                     card.ToOrder.Text = "Заказать";
                     card.ToOrder.ForeColor = Color.White;
                     card.ToOrder.BackColor = Color.FromArgb(116, 142, 95);
+                    card.ChangeToOrder_ToDelete_Click();
+                        
                 }
 
                 //btnDelete_isClicked = false;
@@ -125,25 +127,18 @@ namespace hardware_store
                 {
                     card.ToOrder.Text = "Удалить";
                     card.ToOrder.ForeColor = Color.FromArgb(255, 136, 123);
+                    card.ChangeToOrder_ToDelete_Click();
                 }
                 
             }
             else
             {
-                for (int i = 0; i < productCards.Count; i++)
+                for (int i = productCards.Count-1; i >= 0; i--)
                 {
-                    if (productCards[i].IsOnDelete == true)
+                    if (productCards[i].IsOnDelete)
                     {
-                        products_panel.Remove(productCards[i]);
-                        productCards.Remove(productCards[i]);
                         panel1.Controls.Remove(productCards[i].GetProductCard());
-                    }
-                }
-                for (int i = 0; i < productCards.Count; i++)
-                {
-                    if (productCards[i].IsOnDelete == true)
-                    {
-                        productCards[i].IsOnDelete = false;
+                        productCards.Remove(productCards[i]);
                     }
                 }
                 ClearProductCards();

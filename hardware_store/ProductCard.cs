@@ -20,7 +20,8 @@ namespace hardware_store
 
         public static List<ProductCard> onDelete { get; set; }
         public int id { get; private set; }
-        public bool IsOnDelete { get; set; } 
+        public bool IsOnDelete { get; set; }
+        private bool IsOrderButtonActive = true;
 
         private void Initialize()
         {
@@ -106,27 +107,49 @@ namespace hardware_store
         }
 
         public void ToOrder_Click(object sender, EventArgs e)
-        {
-            if (ToOrder.Text.Equals("Заказать"))
-            {
+        {          
                 Order order = new Order();
                 order.ShowDialog();
 
                 order.picBox.Image = this.pic.Image;
-                order.lblName.Text = order.lblName.Text + " " + this.name.Text;
+                order.lblName.Text = order.lblName.Text + " " + this.name.Text;       
+        }
+        public void Delete_Click(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.FromArgb(252, 238, 141);
+
+            ProductCard order = button.Tag as ProductCard;
+            order.IsOnDelete = true;
+            button.Click += UnDelete_Click;
+            button.Click -= Delete_Click;
+        }
+        public void UnDelete_Click(object sender, EventArgs e)
+        {
+            Button button = sender as Button;
+            button.BackColor = Color.FromArgb(116, 142, 95);
+
+            ProductCard order = button.Tag as ProductCard;
+            order.IsOnDelete = false;
+            button.Click -= UnDelete_Click;
+            button.Click += Delete_Click;
+        }
+        public void ChangeToOrder_ToDelete_Click()
+        {
+            if (IsOrderButtonActive)
+            {
+                ToOrder.Click -= ToOrder_Click;
+                ToOrder.Click += Delete_Click;
             }
             else
             {
-                //удалять из листа и панели;
-                Button button = sender as Button;
-                button.BackColor = Color.FromArgb(252, 238, 141);
-
-                ProductCard order = button.Tag as ProductCard;
-                order.IsOnDelete = true;
-
+                ToOrder.Click += ToOrder_Click;
+                ToOrder.Click -= Delete_Click;
             }
-
+            IsOrderButtonActive = !IsOrderButtonActive;
         }
+
+
         public void Info_Click(object sender, EventArgs e)
         {
             InfoCard infoCard = new InfoCard();
