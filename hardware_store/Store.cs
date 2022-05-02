@@ -137,6 +137,14 @@ namespace hardware_store
                     {
                         panel1.Controls.Remove(productCards[i].GetProductCard());
                         productCards.Remove(productCards[i]);
+                    }                  
+                }
+                for(int i = orderCards.Count - 1; i >= 0; i--)
+                {
+                    if ((orderCards[i].card != null) && orderCards[i].card.IsOnDelete)
+                    {
+                        panelToOrder.Controls.Remove(orderCards[i].GetOrderCard());
+                        orderCards.Remove(orderCards[i]);
                     }
                 }
                 ClearProductCards();
@@ -245,5 +253,9 @@ namespace hardware_store
             PaintOrderPanels();
         }
 
+        private void Store_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

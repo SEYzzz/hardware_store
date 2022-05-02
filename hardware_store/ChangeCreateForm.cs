@@ -36,6 +36,7 @@ namespace hardware_store
             this.Close();
         }
 
+        //Добавление и изменение карточки товара
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (IsFromMain)
