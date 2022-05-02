@@ -416,7 +416,7 @@ namespace hardware_store
             this.Controls.Add(this.tabControl1);
             this.MinimumSize = new System.Drawing.Size(1600, 800);
             this.Name = "Store";
-            this.Text = "Store";
+            this.Text = "7";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

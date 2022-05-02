@@ -90,7 +90,7 @@ namespace hardware_store
             Button button = sender as Button;
             if (button.Text.Equals("+"))
             {
-                ChangeCreateForm createForm = new ChangeCreateForm();
+                ChangeCreateForm createForm = new ChangeCreateForm(productCards);
                 createForm.ShowDialog();
             }
             else

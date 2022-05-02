@@ -22,6 +22,7 @@ namespace hardware_store
         public int id { get; private set; }
         public bool IsOnDelete { get; set; }
         private bool IsOrderButtonActive = true;
+        public string description { get; set; }
 
         private void Initialize()
         {
@@ -91,6 +92,13 @@ namespace hardware_store
             Info.Click += Info_Click;
         }
 
+        public ProductCard(string name, string descriprtion, Image image)
+        {
+            Initialize();
+            this.name.Text = name;
+            this.description = description;
+            pic.Image = image;
+        }
         public ProductCard()
         {
             Initialize();

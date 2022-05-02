@@ -25,8 +25,10 @@ namespace hardware_store
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ChangeCreateForm changeForm = new ChangeCreateForm(this);
-            changeForm.Show();
+            Close();
+            ChangeCreateForm changeForm = new ChangeCreateForm(product);
+            changeForm.IsFromMain = false;
+            changeForm.ShowDialog();
         }
 
         private void InfoCard_Load(object sender, EventArgs e)

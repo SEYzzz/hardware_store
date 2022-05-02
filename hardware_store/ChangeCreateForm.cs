@@ -12,13 +12,23 @@ namespace hardware_store
 {
     public partial class ChangeCreateForm : Form
     {
-        public ChangeCreateForm()
+        public bool IsFromMain = true; 
+        List<ProductCard> productCards { get; set; }
+        ProductCard product { get; set; }
+        public ChangeCreateForm(List<ProductCard> cards)
         {
             InitializeComponent();
+            productCards = cards;
         }
-        public ChangeCreateForm(InfoCard card)
+        public ChangeCreateForm(List<ProductCard> cards, int num) //номер карточки, которую надо заменить
         {
             InitializeComponent();
+            productCards = cards;
+        }
+        public ChangeCreateForm(ProductCard product)
+        {
+            InitializeComponent();
+            this.product = product;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -28,7 +38,32 @@ namespace hardware_store
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            
+            if (IsFromMain)
+            {
+                if (txtBoxName.Text.Any(Char.IsLetter) && txtBoxPrice.Text.Any(Char.IsDigit) &&
+                txtBoxSale.Text.Any(Char.IsDigit) && txtBoxDescrp.Text.Any(Char.IsLetter))
+                {
+                    productCards.Add(new ProductCard(txtBoxName.Text, txtBoxDescrp.Text, pctBox.Image));
+                }
+                else
+                {
+                    MessageBox.Show("Пожалуйста, введите адекватные значения в поля", "Ошибка");
+                }
+            }
+            else
+            {
+                if (txtBoxName.Text.Any(Char.IsLetter) && txtBoxPrice.Text.Any(Char.IsDigit) &&
+                txtBoxSale.Text.Any(Char.IsDigit) && txtBoxDescrp.Text.Any(Char.IsLetter))
+                {
+                    product.name.Text = txtBoxName.Text;
+                    product.pic.Image = pctBox.Image;
+                }
+                else
+                {
+                    MessageBox.Show("Пожалуйста, введите адекватные значения в поля", "Ошибка");
+                }
+            }
+            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
