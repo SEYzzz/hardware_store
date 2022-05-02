@@ -131,6 +131,14 @@ namespace hardware_store
             }
             else
             {
+                for (int i = orderCards.Count - 1; i >= 0; i--)
+                {
+                    if ((orderCards[i].card != null) && orderCards[i].card.IsOnDelete)
+                    {
+                        panelToOrder.Controls.Remove(orderCards[i].GetOrderCard());
+                        orderCards.Remove(orderCards[i]);
+                    }
+                }
                 for (int i = productCards.Count-1; i >= 0; i--)
                 {
                     if (productCards[i].IsOnDelete)
@@ -138,14 +146,6 @@ namespace hardware_store
                         panel1.Controls.Remove(productCards[i].GetProductCard());
                         productCards.Remove(productCards[i]);
                     }                  
-                }
-                for(int i = orderCards.Count - 1; i >= 0; i--)
-                {
-                    if ((orderCards[i].card != null) && orderCards[i].card.IsOnDelete)
-                    {
-                        panelToOrder.Controls.Remove(orderCards[i].GetOrderCard());
-                        orderCards.Remove(orderCards[i]);
-                    }
                 }
                 ClearProductCards();
                 ProductCardsToPanel();

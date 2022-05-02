@@ -45,6 +45,7 @@ namespace hardware_store
                 txtBoxSale.Text.Any(Char.IsDigit) && txtBoxDescrp.Text.Any(Char.IsLetter))
                 {
                     productCards.Add(new ProductCard(txtBoxName.Text, txtBoxDescrp.Text, pctBox.Image));
+                    Close();
                 }
                 else
                 {
@@ -58,19 +59,18 @@ namespace hardware_store
                 {
                     product.name.Text = txtBoxName.Text;
                     product.pic.Image = pctBox.Image;
+                    Close();
                 }
                 else
                 {
                     MessageBox.Show("Пожалуйста, введите адекватные значения в поля", "Ошибка");
                 }
             }
-            Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             openFileDialog1.Filter = "png|*.png| jpg|*.jpg| bmp|*.bmp";
-            openFileDialog1.ShowDialog();
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pctBox.Image = Image.FromFile(openFileDialog1.FileName);
