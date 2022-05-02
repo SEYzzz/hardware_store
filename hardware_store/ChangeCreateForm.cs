@@ -16,7 +16,6 @@ namespace hardware_store
         {
             InitializeComponent();
         }
-
         public ChangeCreateForm(InfoCard card)
         {
             InitializeComponent();
@@ -25,6 +24,21 @@ namespace hardware_store
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Filter = "png|*.png| jpg|*.jpg| bmp|*.bmp";
+            openFileDialog1.ShowDialog();
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pctBox.Image = Image.FromFile(openFileDialog1.FileName);
+            }
         }
     }
 }

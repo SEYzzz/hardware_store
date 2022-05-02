@@ -9,7 +9,7 @@ using System.IO;
 
 namespace hardware_store
 {
-    class ProductCard
+    public class ProductCard
     {
         public Panel panel;
         public Button ToOrder;
@@ -108,7 +108,7 @@ namespace hardware_store
 
         public void ToOrder_Click(object sender, EventArgs e)
         {          
-                Order order = new Order();
+                Order order = new Order(this);
                 order.ShowDialog();
 
                 order.picBox.Image = this.pic.Image;
@@ -152,7 +152,7 @@ namespace hardware_store
 
         public void Info_Click(object sender, EventArgs e)
         {
-            InfoCard infoCard = new InfoCard();
+            InfoCard infoCard = new InfoCard(this);
             infoCard.ShowDialog();
 
             infoCard.pictureBox1.Image = this.pic.Image;

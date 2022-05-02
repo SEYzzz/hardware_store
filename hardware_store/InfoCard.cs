@@ -12,16 +12,27 @@ namespace hardware_store
 {
     public partial class InfoCard : Form
     {
+        ProductCard product { get; set; }
         public InfoCard()
         {
             InitializeComponent();
         }
+        public InfoCard(ProductCard product)
+        {
+            InitializeComponent();
+            this.product = product;
+        }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ChangeCreateForm changeForm = new ChangeCreateForm();
+            ChangeCreateForm changeForm = new ChangeCreateForm(this);
             changeForm.Show();
         }
 
+        private void InfoCard_Load(object sender, EventArgs e)
+        {
+            lblName.Text += " " + product.name.Text;
+            pictureBox1.Image = product.pic.Image;
+        }
     }
 }

@@ -148,6 +148,7 @@ namespace hardware_store
             this.MinimumSize = new System.Drawing.Size(555, 720);
             this.Name = "InfoCard";
             this.Text = "InfoCard";
+            this.Load += new System.EventHandler(this.InfoCard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

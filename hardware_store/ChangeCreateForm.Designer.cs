@@ -42,6 +42,8 @@ namespace hardware_store
             this.txtBoxPrice = new System.Windows.Forms.TextBox();
             this.txtBoxDescrp = new System.Windows.Forms.TextBox();
             this.comboBox = new System.Windows.Forms.ComboBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +53,7 @@ namespace hardware_store
             this.pctBox.Location = new System.Drawing.Point(22, 29);
             this.pctBox.Name = "pctBox";
             this.pctBox.Size = new System.Drawing.Size(260, 243);
+            this.pctBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox.TabIndex = 0;
             this.pctBox.TabStop = false;
             // 
@@ -121,6 +124,7 @@ namespace hardware_store
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -172,12 +176,32 @@ namespace hardware_store
             this.comboBox.Size = new System.Drawing.Size(121, 24);
             this.comboBox.TabIndex = 12;
             // 
-            // ChangeForm
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.button1.Location = new System.Drawing.Point(329, 104);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(177, 47);
+            this.button1.TabIndex = 13;
+            this.button1.Text = "Выбрать фото";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // ChangeCreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(215)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(537, 673);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox);
             this.Controls.Add(this.txtBoxDescrp);
             this.Controls.Add(this.txtBoxPrice);
@@ -193,7 +217,7 @@ namespace hardware_store
             this.Controls.Add(this.pctBox);
             this.MaximumSize = new System.Drawing.Size(555, 720);
             this.MinimumSize = new System.Drawing.Size(555, 720);
-            this.Name = "ChangeForm";
+            this.Name = "ChangeCreateForm";
             this.Text = "ChangeForm";
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).EndInit();
             this.ResumeLayout(false);
@@ -216,5 +240,7 @@ namespace hardware_store
         private System.Windows.Forms.TextBox txtBoxPrice;
         private System.Windows.Forms.TextBox txtBoxDescrp;
         private System.Windows.Forms.ComboBox comboBox;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button button1;
     }
 }

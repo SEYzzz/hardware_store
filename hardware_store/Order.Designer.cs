@@ -139,6 +139,7 @@ namespace hardware_store
             this.btnToOrder.TabIndex = 8;
             this.btnToOrder.Text = "Заказать";
             this.btnToOrder.UseVisualStyleBackColor = false;
+            this.btnToOrder.Click += new System.EventHandler(this.btnToOrder_Click);
             // 
             // btnReject
             // 
@@ -175,6 +176,7 @@ namespace hardware_store
             this.MinimumSize = new System.Drawing.Size(555, 720);
             this.Name = "Order";
             this.Text = "Order";
+            this.Load += new System.EventHandler(this.Order_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -31,15 +31,13 @@ namespace hardware_store
         List<ProductCard> products_panel = new List<ProductCard>();
 
         List<String> groups = new List<string>();
-        
-        
+              
 
         public Store()
         {
             InitializeComponent();
             Bl();
         }
-
 
         //вывод;
         public void Bl()
@@ -143,6 +141,17 @@ namespace hardware_store
                 }
                 ClearProductCards();
                 ProductCardsToPanel();
+
+                button.Text = "-";
+                btnAdd.Text = "+";
+                btnDelete_isClicked = false;
+                foreach (ProductCard card in productCards)
+                {
+                    card.ToOrder.Text = "Заказать";
+                    card.ToOrder.ForeColor = Color.White;
+                    card.ChangeToOrder_ToDelete_Click();
+                }
+
             }
 
         }
@@ -178,7 +187,6 @@ namespace hardware_store
                 panelToOrder.Controls.Add(orderCards[i].GetOrderCard());
             }
         }
-
 
         //изменение размеров;
         private void ClearProductCards()
