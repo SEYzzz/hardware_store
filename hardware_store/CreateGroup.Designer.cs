@@ -29,6 +29,7 @@ namespace hardware_store
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreateGroup));
             this.lblGroupName = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnCreate = new System.Windows.Forms.Button();
@@ -94,6 +95,7 @@ namespace hardware_store
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblGroupName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(500, 300);
             this.MinimumSize = new System.Drawing.Size(500, 300);
             this.Name = "CreateGroup";

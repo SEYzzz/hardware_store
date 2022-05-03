@@ -46,16 +46,17 @@ namespace hardware_store
             {
                 productCards.Add(new ProductCard());
                 productCards.Last().name.Text = "Name" + i;
+                productCards.Last().orderCards = orderCards;
             }
             ProductCardsToPanel();
 
             for (int i = 0; i < 10; i++)
             {
-                orderCards.Add(new OrderCard(orderCards));
+                orderCards.Add(new OrderCard());
                 orderCards.Last().name.Text += i;
-            }
-            
-
+                orderCards.Last().ToReject.Click += tabControl1_Selected;
+                orderCards.Last().ToAccept.Click += tabControl1_Selected;
+            }         
         }
         private void ProductCardsToPanel()
         {
@@ -167,10 +168,12 @@ namespace hardware_store
         //вывод на панель OrderCard;
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
+            CheckOrderCards();
             PaintOrderPanels();
         }
         private void tabControl1_Selected(object sender, EventArgs e)
         {
+            CheckOrderCards();
             Clear_Order();
             Order_Hight = (panelToOrder.Height - 70) / 130;
             PaintOrderPanels();
@@ -286,6 +289,18 @@ namespace hardware_store
                 btnGroupAdd.ForeColor = Color.FromArgb(252, 238, 141);
                 btnGruopDelete.Text = "-";
                 btnGruopDelete.ForeColor = Color.White;
+            }
+        }
+
+        private void CheckOrderCards()
+        {
+            for(int i = orderCards.Count - 1; i >= 0; i--)
+            {
+                if (orderCards[i].IsOnDelete)
+                {
+                    panelToOrder.Controls.Remove(orderCards[i].GetOrderCard());
+                    orderCards.Remove(orderCards[i]);
+                }
             }
         }
     }

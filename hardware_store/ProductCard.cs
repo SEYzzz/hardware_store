@@ -22,11 +22,13 @@ namespace hardware_store
         public int id { get; private set; }
         public bool IsOnDelete { get; set; }
         private bool IsOrderButtonActive = true;
+        public List<OrderCard> orderCards { get; set; }
 
         public string description { get; set; }
         public int purch_price { get; set; }
         public int sale { get; set; }
-
+        public int in_stock { get; set; }
+        public int rest { get; set; }
 
         private void Initialize()
         {
@@ -96,6 +98,14 @@ namespace hardware_store
             Info.Click += Info_Click;
         }
 
+        public ProductCard(string name, string descriprtion, Image image, List<OrderCard> orderCards)
+        {
+            Initialize();
+            this.name.Text = name;
+            this.description = description;
+            pic.Image = image;
+            this.orderCards = orderCards;
+        }
         public ProductCard(string name, string descriprtion, Image image)
         {
             Initialize();
@@ -120,7 +130,7 @@ namespace hardware_store
 
         public void ToOrder_Click(object sender, EventArgs e)
         {          
-                Order order = new Order(this);
+                Order order = new Order(this, orderCards);
                 order.ShowDialog();
 
                 order.picBox.Image = this.pic.Image;

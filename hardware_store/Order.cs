@@ -13,16 +13,18 @@ namespace hardware_store
     public partial class Order : Form
     {
         ProductCard product { get; set; }
-        public int count { get; private set; } 
+        public int count { get; private set; }
+        private List<OrderCard> cards { get; set; }
 
         public Order()
         {
             InitializeComponent();
         }
-        public Order(ProductCard product)
+        public Order(ProductCard product, List<OrderCard> cards)
         {
             InitializeComponent();
             this.product = product;
+            this.cards = cards;
         }
 
         private void btnReject_Click(object sender, EventArgs e)
@@ -34,14 +36,21 @@ namespace hardware_store
         {
             lblName.Text += " " + product.name.Text;
             picBox.Image = product.pic.Image;
+            lblCostSale.Text += " " + product.sale;
+            lblPrice.Text += " " + product.purch_price;
+            lblRest.Text = product.rest + "/" + product.in_stock;
         }
 
         private void btnToOrder_Click(object sender, EventArgs e)
         {
             if(txtBoxCount.Text.All(Char.IsDigit))
             {
-                OrderCard orderCard = new OrderCard(product, Convert.ToInt32(txtBoxCount.Text));
-                //добавить в лист orderCards из Store
+                cards.Add(new OrderCard(product, Convert.ToInt32(txtBoxCount.Text)));
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Введите корректные данные", "Ошибка");
             }
         }
     }

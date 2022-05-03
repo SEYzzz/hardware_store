@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace hardware_store
 {
-    class OrderCard
+    public class OrderCard
     {
         
         public Panel panel;
@@ -22,7 +22,7 @@ namespace hardware_store
 
         public DateTime order_date { get; private set; }
         public int ord_count { get; private set; }
-        List<OrderCard> cards { get; set; }
+        public bool IsOnDelete { get; set; }
 
         public void Initialize()
         {
@@ -107,11 +107,6 @@ namespace hardware_store
         {
             Initialize();
         }
-        public OrderCard(List<OrderCard> cards)
-        {
-            Initialize();
-            this.cards = cards;
-        }
         public OrderCard(ProductCard card)
         {
             Initialize();
@@ -122,8 +117,11 @@ namespace hardware_store
         {
             Initialize();
             this.card = card;
-            name = card.name;
+            name.Text += " " + card.name.Text;
             ord_count = count;
+            this.count.Text += " " + Convert.ToString(ord_count);
+            order_date = DateTime.Now;
+            date_Order.Text += " " + order_date.ToLongDateString();
         }
 
         public Panel GetOrderCard()
@@ -133,12 +131,20 @@ namespace hardware_store
 
         public void ToAccept_Click(object sender, EventArgs e)
         {
-
+            if(ord_count + card.in_stock > card.in_stock || ord_count > card.in_stock)
+            {
+                card.in_stock = ord_count + card.rest;
+                card.rest += ord_count;
+            }
+            else
+            {
+                card.rest += ord_count;
+            }
+            this.IsOnDelete = true;
         }
         public void ToReject_Click(object sender, EventArgs e)
         {
-            cards.Remove(this);
-
+            this.IsOnDelete = true;
         }
 
     }

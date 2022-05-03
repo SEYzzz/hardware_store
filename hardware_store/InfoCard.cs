@@ -35,6 +35,7 @@ namespace hardware_store
         {
             lblName.Text += " " + product.name.Text;
             pictureBox1.Image = product.pic.Image;
+            lblRest.Text = product.rest + "/" + product.in_stock;
             if (product.description != null && product.purch_price != 0 && product.sale != 0)
             {
                 lblDescrp.Text += " " + product.description;
