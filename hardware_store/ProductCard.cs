@@ -22,7 +22,11 @@ namespace hardware_store
         public int id { get; private set; }
         public bool IsOnDelete { get; set; }
         private bool IsOrderButtonActive = true;
+
         public string description { get; set; }
+        public int purch_price { get; set; }
+        public int sale { get; set; }
+
 
         private void Initialize()
         {

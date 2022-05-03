@@ -13,6 +13,7 @@ namespace hardware_store
     public partial class Order : Form
     {
         ProductCard product { get; set; }
+        public int count { get; private set; } 
 
         public Order()
         {
@@ -37,9 +38,10 @@ namespace hardware_store
 
         private void btnToOrder_Click(object sender, EventArgs e)
         {
-            if((txtBoxCount.TextLength != 0) && txtBoxCount.Text.Any(Char.IsDigit) && (!txtBoxCount.Text.Any(Char.IsLetter)) && (!txtBoxCount.Text.Any(Char.IsWhiteSpace)))
+            if(txtBoxCount.Text.All(Char.IsDigit))
             {
-
+                OrderCard orderCard = new OrderCard(product, Convert.ToInt32(txtBoxCount.Text));
+                //добавить в лист orderCards из Store
             }
         }
     }

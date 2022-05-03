@@ -58,6 +58,7 @@
     <Compile Include="CreateGroup.Designer.cs">
       <DependentUpon>CreateGroup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Group.cs" />
     <Compile Include="InfoCard.cs">
       <SubType>Form</SubType>
     </Compile>

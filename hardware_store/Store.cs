@@ -51,7 +51,7 @@ namespace hardware_store
 
             for (int i = 0; i < 10; i++)
             {
-                orderCards.Add(new OrderCard());
+                orderCards.Add(new OrderCard(orderCards));
                 orderCards.Last().name.Text += i;
             }
             
@@ -164,12 +164,6 @@ namespace hardware_store
 
         }
 
-        private void btnGroupAdd_Click(object sender, EventArgs e)
-        {
-            CreateGroup createGroup = new CreateGroup(this);
-            createGroup.ShowDialog();
-        }
-
         //вывод на панель OrderCard;
         private void tabControl1_Selected(object sender, TabControlEventArgs e)
         {
@@ -253,9 +247,46 @@ namespace hardware_store
             PaintOrderPanels();
         }
 
-        private void Store_Load(object sender, EventArgs e)
-        {
 
+        private void btnGroupAdd_Click(object sender, EventArgs e)
+        {
+            if (btnGroupAdd.Text.Equals("+"))
+            {
+                CreateGroup createGroup = new CreateGroup(this);
+                createGroup.ShowDialog();
+            }
+            else
+            {
+                btnGroupAdd.Text = "+";
+                btnGroupAdd.ForeColor = Color.FromArgb(252, 238, 141);
+                btnGruopDelete.Text = "-";
+                btnGruopDelete.ForeColor = Color.White;
+            }
+        }
+        private void btnGruopDelete_Click(object sender, EventArgs e)
+        {
+            if (btnGruopDelete.Text.Equals("-"))
+            {
+                btnGroupAdd.Text = "×";
+                btnGroupAdd.ForeColor = Color.FromArgb(165, 202, 135);
+                btnGruopDelete.Text = "✓";
+                btnGruopDelete.ForeColor = Color.FromArgb(255, 136, 123);
+            }
+            else
+            {
+                if(chekListGroups.CheckedItems != null)
+                {
+                    for(int i = chekListGroups.CheckedItems.Count - 1; i >= 0; i--)
+                    {
+                        checkedListBox1.Items.Remove(chekListGroups.CheckedItems[i]);
+                        chekListGroups.Items.Remove(chekListGroups.CheckedItems[i]);
+                    }
+                }
+                btnGroupAdd.Text = "+";
+                btnGroupAdd.ForeColor = Color.FromArgb(252, 238, 141);
+                btnGruopDelete.Text = "-";
+                btnGruopDelete.ForeColor = Color.White;
+            }
         }
     }
 }

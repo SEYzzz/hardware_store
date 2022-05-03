@@ -219,6 +219,7 @@ namespace hardware_store
             this.MinimumSize = new System.Drawing.Size(555, 720);
             this.Name = "ChangeCreateForm";
             this.Text = "ChangeForm";
+            this.Load += new System.EventHandler(this.ChangeCreateForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

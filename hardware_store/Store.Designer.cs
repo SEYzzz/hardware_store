@@ -202,7 +202,9 @@ namespace hardware_store
             this.chekListGroups.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
             this.chekListGroups.FormattingEnabled = true;
             this.chekListGroups.Items.AddRange(new object[] {
-            "Болты"});
+            "Болты",
+            "Гвозди",
+            "Кирпичи"});
             this.chekListGroups.Location = new System.Drawing.Point(3, 3);
             this.chekListGroups.Name = "chekListGroups";
             this.chekListGroups.Size = new System.Drawing.Size(136, 646);
@@ -222,6 +224,7 @@ namespace hardware_store
             this.btnGruopDelete.TabIndex = 1;
             this.btnGruopDelete.Text = "-";
             this.btnGruopDelete.UseVisualStyleBackColor = false;
+            this.btnGruopDelete.Click += new System.EventHandler(this.btnGruopDelete_Click);
             // 
             // btnGroupAdd
             // 
@@ -336,7 +339,9 @@ namespace hardware_store
             this.checkedListBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
-            "Болты"});
+            "Болты",
+            "Гвозди",
+            "Кирпичи"});
             this.checkedListBox1.Location = new System.Drawing.Point(5, 3);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(171, 663);
@@ -417,7 +422,6 @@ namespace hardware_store
             this.MinimumSize = new System.Drawing.Size(1600, 800);
             this.Name = "Store";
             this.Text = "Store";
-            this.Load += new System.EventHandler(this.Store_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -441,7 +445,7 @@ namespace hardware_store
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panelToOrder;
+        public System.Windows.Forms.Panel panelToOrder;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelLeftStat;
         private System.Windows.Forms.Panel panelDockStat;

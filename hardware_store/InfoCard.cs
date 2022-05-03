@@ -35,6 +35,12 @@ namespace hardware_store
         {
             lblName.Text += " " + product.name.Text;
             pictureBox1.Image = product.pic.Image;
+            if (product.description != null && product.purch_price != 0 && product.sale != 0)
+            {
+                lblDescrp.Text += " " + product.description;
+                lblPrice.Text += " " + Convert.ToString(product.purch_price);
+                lblCostSale.Text += " " + Convert.ToString(product.sale);
+            }
         }
     }
 }

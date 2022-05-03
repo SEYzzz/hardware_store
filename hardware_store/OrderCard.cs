@@ -22,11 +22,7 @@ namespace hardware_store
 
         public DateTime order_date { get; private set; }
         public int ord_count { get; private set; }
-        public string group { get; private set; }     //
-        public decimal cost_of_sale { get; private set; }
-        public decimal purchase_price { get; private set; }
-        public string name_of_product { get; private set; }
-
+        List<OrderCard> cards { get; set; }
 
         public void Initialize()
         {
@@ -101,6 +97,9 @@ namespace hardware_store
             panel.Controls.Add(name);
             panel.Controls.Add(count);
             panel.Controls.Add(date_Order);
+
+            ToAccept.Click += ToAccept_Click;
+            ToReject.Click += ToReject_Click;
         }
 
 
@@ -108,11 +107,23 @@ namespace hardware_store
         {
             Initialize();
         }
+        public OrderCard(List<OrderCard> cards)
+        {
+            Initialize();
+            this.cards = cards;
+        }
         public OrderCard(ProductCard card)
         {
             Initialize();
             this.card = card;
             name = card.name;
+        }
+        public OrderCard(ProductCard card, int count)
+        {
+            Initialize();
+            this.card = card;
+            name = card.name;
+            ord_count = count;
         }
 
         public Panel GetOrderCard()
@@ -120,6 +131,15 @@ namespace hardware_store
             return panel;
         }
 
+        public void ToAccept_Click(object sender, EventArgs e)
+        {
+
+        }
+        public void ToReject_Click(object sender, EventArgs e)
+        {
+            cards.Remove(this);
+
+        }
 
     }
 }

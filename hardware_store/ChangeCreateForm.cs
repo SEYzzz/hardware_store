@@ -54,11 +54,14 @@ namespace hardware_store
             }
             else
             {
-                if (txtBoxName.Text.Any(Char.IsLetter) && txtBoxPrice.Text.Any(Char.IsDigit) &&
-                txtBoxSale.Text.Any(Char.IsDigit) && txtBoxDescrp.Text.Any(Char.IsLetter))
+                if (txtBoxName.Text.Any(Char.IsLetter) || txtBoxPrice.Text.All(Char.IsDigit) ||
+                txtBoxSale.Text.All(Char.IsDigit) || txtBoxDescrp.Text.Any(Char.IsLetter))
                 {
                     product.name.Text = txtBoxName.Text;
                     product.pic.Image = pctBox.Image;
+                    product.purch_price = Convert.ToInt32(txtBoxPrice.Text);
+                    product.sale = Convert.ToInt32(txtBoxSale.Text);
+                    product.description = txtBoxDescrp.Text;
                     Close();
                 }
                 else
@@ -74,6 +77,21 @@ namespace hardware_store
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pctBox.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+        }
+
+        private void ChangeCreateForm_Load(object sender, EventArgs e)
+        {
+            if (!IsFromMain)
+            {
+                pctBox.Image = product.pic.Image;
+                txtBoxName.Text = product.name.Text;
+                if(product.description != null && product.purch_price != 0 && product.sale != 0)
+                {
+                    txtBoxPrice.Text = Convert.ToString(product.purch_price);
+                    txtBoxSale.Text = Convert.ToString(product.sale);
+                    txtBoxDescrp.Text = product.description;
+                }
             }
         }
     }
