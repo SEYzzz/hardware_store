@@ -26,7 +26,7 @@ namespace hardware_store
         private void button1_Click(object sender, EventArgs e)
         {
             Close();
-            ChangeCreateForm changeForm = new ChangeCreateForm(product);
+            ChangeCreateForm changeForm = new ChangeCreateForm(product, product.orderCards);
             changeForm.IsFromMain = false;
             changeForm.ShowDialog();
         }

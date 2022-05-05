@@ -8,9 +8,12 @@ namespace hardware_store
 {
     static class Program
     {
+        public static List<ProductCard> productCards;
+        public static List<OrderCard> orderCards;
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
+        
         [STAThread]
         static void Main()
         {

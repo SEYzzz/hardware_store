@@ -15,20 +15,23 @@ namespace hardware_store
         public bool IsFromMain = true; 
         List<ProductCard> productCards { get; set; }
         ProductCard product { get; set; }
-        public ChangeCreateForm(List<ProductCard> cards)
+        private List<OrderCard> orders;
+        public ChangeCreateForm(List<ProductCard> cards, List<OrderCard> orders)
         {
             InitializeComponent();
             productCards = cards;
+            this.orders = orders;
         }
         public ChangeCreateForm(List<ProductCard> cards, int num) //номер карточки, которую надо заменить
         {
             InitializeComponent();
             productCards = cards;
         }
-        public ChangeCreateForm(ProductCard product)
+        public ChangeCreateForm(ProductCard product, List<OrderCard> orders)
         {
             InitializeComponent();
             this.product = product;
+            this.orders = orders;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -44,7 +47,16 @@ namespace hardware_store
                 if (txtBoxName.Text.Any(Char.IsLetter) && txtBoxPrice.Text.Any(Char.IsDigit) &&
                 txtBoxSale.Text.Any(Char.IsDigit) && txtBoxDescrp.Text.Any(Char.IsLetter))
                 {
-                    productCards.Add(new ProductCard(txtBoxName.Text, txtBoxDescrp.Text, pctBox.Image));
+                    string name = txtBoxName.Text;
+                    string descr = txtBoxDescrp.Text;
+                    int gr_id = Convert.ToInt32(txtBoxGroup.Text);
+                    Image image = pctBox.Image;
+                    int price = Convert.ToInt32(txtBoxSale.Text);
+                    int sale = Convert.ToInt32(txtBoxPrice.Text);
+                    int in_stock = 1;
+                    int rest = 0;
+                    productCards.Add(new ProductCard(name, descr, gr_id, image, price, sale, in_stock, rest));
+                    productCards.Last().orderCards = orders;
                     Close();
                 }
                 else

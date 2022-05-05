@@ -124,11 +124,11 @@ namespace hardware_store
             // lblRest
             // 
             this.lblRest.AutoSize = true;
-            this.lblRest.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblRest.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblRest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.lblRest.Location = new System.Drawing.Point(339, 110);
+            this.lblRest.Location = new System.Drawing.Point(322, 109);
             this.lblRest.Name = "lblRest";
-            this.lblRest.Size = new System.Drawing.Size(130, 69);
+            this.lblRest.Size = new System.Drawing.Size(86, 46);
             this.lblRest.TabIndex = 7;
             this.lblRest.Text = "rest";
             // 

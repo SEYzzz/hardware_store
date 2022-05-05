@@ -23,6 +23,7 @@ namespace hardware_store
         public DateTime order_date { get; private set; }
         public int ord_count { get; private set; }
         public bool IsOnDelete { get; set; }
+        public bool IsSubs = false;
 
         public void Initialize()
         {

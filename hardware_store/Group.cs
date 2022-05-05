@@ -10,10 +10,12 @@ namespace hardware_store
     {
         public List<ProductCard> cards { get; set; }
         public string name { get; set; }
+        public int id { get; set; }
 
         public Group() { }
-        public Group(string name)
+        public Group(int id, string name)
         {
+            this.id = id;
             this.name = name;
         }
 
