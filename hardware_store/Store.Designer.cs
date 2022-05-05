@@ -46,7 +46,7 @@ namespace hardware_store
             this.panelToOrder = new System.Windows.Forms.Panel();
             this.btnUp2 = new System.Windows.Forms.Button();
             this.btnDown2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblOrders = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panelLeftStat = new System.Windows.Forms.Panel();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
@@ -254,7 +254,7 @@ namespace hardware_store
             // 
             this.panelToOrder.Controls.Add(this.btnUp2);
             this.panelToOrder.Controls.Add(this.btnDown2);
-            this.panelToOrder.Controls.Add(this.label1);
+            this.panelToOrder.Controls.Add(this.lblOrders);
             this.panelToOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelToOrder.Location = new System.Drawing.Point(3, 3);
             this.panelToOrder.Name = "panelToOrder";
@@ -294,17 +294,17 @@ namespace hardware_store
             this.btnDown2.UseVisualStyleBackColor = false;
             this.btnDown2.Click += new System.EventHandler(this.btnDown2_Click);
             // 
-            // label1
+            // lblOrders
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.label1.Location = new System.Drawing.Point(0, 672);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(421, 46);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Заказов в обработке:";
+            this.lblOrders.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.lblOrders.AutoSize = true;
+            this.lblOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.lblOrders.Location = new System.Drawing.Point(0, 672);
+            this.lblOrders.Name = "lblOrders";
+            this.lblOrders.Size = new System.Drawing.Size(421, 46);
+            this.lblOrders.TabIndex = 0;
+            this.lblOrders.Text = "Заказов в обработке:";
             // 
             // tabPage3
             // 
@@ -442,7 +442,7 @@ namespace hardware_store
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Panel panelToOrder;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblOrders;
         private System.Windows.Forms.Panel panelLeftStat;
         private System.Windows.Forms.Panel panelDockStat;
         private System.Windows.Forms.Button btnReport;

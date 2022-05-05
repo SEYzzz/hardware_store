@@ -84,6 +84,7 @@ namespace hardware_store
                     }
                 }
             }
+            lblStuff.Text = "Товаров доступно: " + productCards.Count;
         }
 
         private void panelLeftStat_Paint(object sender, PaintEventArgs e)
@@ -231,6 +232,7 @@ namespace hardware_store
                 order_on_panel.Add(orderCards[i]);
                 panelToOrder.Controls.Add(orderCards[i].GetOrderCard());
             }
+            lblOrders.Text = "Заказов в обработке: " + orderCards.Count;
         }
 
         //изменение размеров;
@@ -261,7 +263,7 @@ namespace hardware_store
         private void btnDown_Click(object sender, EventArgs e)
         {
             FirstProductCard += ProductCard_Hight * ProductCard_Wigth;
-            FirstProductCard = FirstProductCard >= productCards.Count ? productCards.Count - ProductCard_Hight * ProductCard_Wigth : FirstProductCard;
+            FirstProductCard = FirstProductCard >= productCards.Count ? FirstProductCard - ProductCard_Hight * ProductCard_Wigth : FirstProductCard;
             ClearProductCards();
             ProductCardsToPanel();
         }
@@ -522,5 +524,6 @@ namespace hardware_store
             WriteDownGroups();
             WriteDownOrdCards();
         }
+
     }
 }
