@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Data.SQLite;
 
 namespace hardware_store
 {
@@ -31,18 +33,24 @@ namespace hardware_store
         List<ProductCard> products_panel = new List<ProductCard>();
 
         List<String> groups = new List<string>();
-              
+
+        DataTable prCards = new DataTable();
+        DataTable ordCards = new DataTable();
+        SQLiteConnection connection = DBclass.GetConnection();
+        int count;
 
         public Store()
         {
             InitializeComponent();
+            LoadDT_prCards();
+            LoadDT_ordCards();
             Bl();
         }
 
         //вывод;
         public void Bl()
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < 5; i++)
             {
                 productCards.Add(new ProductCard());
                 productCards.Last().name.Text = "Name" + i;
@@ -50,13 +58,13 @@ namespace hardware_store
             }
             ProductCardsToPanel();
 
-            for (int i = 0; i < 10; i++)
-            {
-                orderCards.Add(new OrderCard());
-                orderCards.Last().name.Text += i;
-                orderCards.Last().ToReject.Click += tabControl1_Selected;
-                orderCards.Last().ToAccept.Click += tabControl1_Selected;
-            }         
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    orderCards.Add(new OrderCard());
+            //    orderCards.Last().name.Text += i;
+            //    orderCards.Last().ToReject.Click += tabControl1_Selected;
+            //    orderCards.Last().ToAccept.Click += tabControl1_Selected;
+            //}         
         }
         private void ProductCardsToPanel()
         {
@@ -250,7 +258,7 @@ namespace hardware_store
             PaintOrderPanels();
         }
 
-
+        //кнопки добавить и удалить для групп
         private void btnGroupAdd_Click(object sender, EventArgs e)
         {
             if (btnGroupAdd.Text.Equals("+"))
@@ -292,6 +300,7 @@ namespace hardware_store
             }
         }
 
+        //штука для удаления карточек
         private void CheckOrderCards()
         {
             for(int i = orderCards.Count - 1; i >= 0; i--)
@@ -302,6 +311,127 @@ namespace hardware_store
                     orderCards.Remove(orderCards[i]);
                 }
             }
+        }
+
+        //работа с SQLite
+        private void LoadDT_prCards()
+        {
+            string sqlcommand = "SELECT* FROM productCards";
+            connection.Open();
+            SQLiteCommand command = new SQLiteCommand(sqlcommand, connection);
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+            adapter.Fill(prCards);
+            connection.Close();
+        }
+        private void LoadDT_ordCards()
+        {
+            string sqlcommand = "SELECT* FROM orderCards";
+            connection.Open();
+            SQLiteCommand command = new SQLiteCommand(sqlcommand, connection);
+            SQLiteDataAdapter adapter = new SQLiteDataAdapter(command);
+            adapter.Fill(ordCards);
+            connection.Close();
+        }
+
+        private void LoadGroups()
+        {
+            connection.Open();
+            SQLiteCommand command = new SQLiteCommand("SELECT name FROM Groups", connection);
+            IDataReader rdr = command.ExecuteReader();
+            try
+            {
+                while (rdr.Read())
+                {
+                    chekListGroups.Items.Add(rdr.GetString(0));
+                    checkedListBox1.Items.Add(rdr.GetString(0));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            rdr.Close();
+            connection.Close();
+        }
+        private void LoadProductCards()
+        {
+            foreach(DataRow dr in prCards.Rows)
+            {
+                try
+                {
+                    string name = (string)dr.ItemArray[1];
+                    string descrip = (string)dr.ItemArray[2];
+                    Image image = DBclass.ByteToImage((byte[])dr.ItemArray[3]);
+                    int group_id = Convert.ToInt32(dr.ItemArray[4]);
+                    int price = Convert.ToInt32(dr.ItemArray[5]);
+                    int sale = Convert.ToInt32(dr.ItemArray[6]);
+                    int in_stock = Convert.ToInt32(dr.ItemArray[7]);
+                    int rest = Convert.ToInt32(dr.ItemArray[8]);
+                    productCards.Add(new ProductCard(name, descrip, image, group_id, price, sale, in_stock, rest));
+                    productCards.Last().orderCards = orderCards;
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
+            }
+            count = productCards.Count();
+        }
+        private void LoadOrderCards()
+        {
+            foreach (DataRow dr in ordCards.Rows)
+            {
+                try
+                {
+                    DateTime date = Convert.ToDateTime(dr.ItemArray[1]);
+                    int count = Convert.ToInt32(dr.ItemArray[2]);
+                    ProductCard card = productCards[Convert.ToInt32(dr.ItemArray[3])];
+                    orderCards.Add(new OrderCard(date, count, card));
+                    orderCards.Last().ToReject.Click += tabControl1_Selected;
+                    orderCards.Last().ToAccept.Click += tabControl1_Selected;
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show(exp.Message);
+                }
+            }
+
+        }
+
+        private void WriteDownGroups()
+        {
+
+        }
+        private void WriteDownPrCards()
+        {
+            connection.Open();
+            for (int i = count; i < productCards.Count; i++)
+            {
+                string name = productCards[i].name.Text;
+                string descr = productCards[i].description;
+                byte[] image = DBclass.ImageToByteArray(productCards[i].pic.Image);
+                int gr_id = productCards[i].group_id;
+                int price = productCards[i].sale;
+                int sale = productCards[i].purch_price;
+                int in_stock = 1;
+                int rest = 0;
+                SQLiteCommand command = new SQLiteCommand($"INSERT INTO productCards(name, description, image, group_id, price, sale, in_stock, rest)" +
+                    $" VALUES('{name}', '{descr}', '{image}', '{gr_id}', '{price}', '{sale}', '{in_stock}', '{rest}')", connection);
+                command.ExecuteNonQuery();
+            }
+            connection.Close();
+        }
+
+        private void Store_Load(object sender, EventArgs e)
+        {
+            LoadGroups();
+            LoadProductCards();
+            LoadOrderCards();
+        }
+
+        private void Store_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            WriteDownPrCards();
         }
     }
 }

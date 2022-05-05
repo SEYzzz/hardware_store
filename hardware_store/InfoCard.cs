@@ -33,15 +33,13 @@ namespace hardware_store
 
         private void InfoCard_Load(object sender, EventArgs e)
         {
+            lblGroup.Text += " " + Convert.ToString(product.group_id);
             lblName.Text += " " + product.name.Text;
             pictureBox1.Image = product.pic.Image;
             lblRest.Text = product.rest + "/" + product.in_stock;
-            if (product.description != null && product.purch_price != 0 && product.sale != 0)
-            {
-                lblDescrp.Text += " " + product.description;
-                lblPrice.Text += " " + Convert.ToString(product.purch_price);
-                lblCostSale.Text += " " + Convert.ToString(product.sale);
-            }
+            lblPrice.Text += " " + Convert.ToString(product.sale);
+            lblCostSale.Text += " " + Convert.ToString(product.purch_price);
+            richTextBox1.Text = product.description;
         }
     }
 }

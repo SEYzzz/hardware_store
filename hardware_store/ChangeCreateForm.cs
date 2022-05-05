@@ -59,8 +59,8 @@ namespace hardware_store
                 {
                     product.name.Text = txtBoxName.Text;
                     product.pic.Image = pctBox.Image;
-                    product.purch_price = Convert.ToInt32(txtBoxPrice.Text);
-                    product.sale = Convert.ToInt32(txtBoxSale.Text);
+                    product.sale = Convert.ToInt32(txtBoxPrice.Text);
+                    product.purch_price = Convert.ToInt32(txtBoxSale.Text);
                     product.description = txtBoxDescrp.Text;
                     Close();
                 }
@@ -73,7 +73,7 @@ namespace hardware_store
 
         private void button1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "png|*.png| jpg|*.jpg| bmp|*.bmp";
+            openFileDialog1.Filter = "jpg|*.jpg";
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pctBox.Image = Image.FromFile(openFileDialog1.FileName);
@@ -86,10 +86,11 @@ namespace hardware_store
             {
                 pctBox.Image = product.pic.Image;
                 txtBoxName.Text = product.name.Text;
-                if(product.description != null && product.purch_price != 0 && product.sale != 0)
+                if(product.purch_price != 0 && product.sale != 0)
                 {
-                    txtBoxPrice.Text = Convert.ToString(product.purch_price);
-                    txtBoxSale.Text = Convert.ToString(product.sale);
+                    txtBoxPrice.Text = Convert.ToString(product.sale);
+                    txtBoxSale.Text = Convert.ToString(product.purch_price);
+                    txtBoxGroup.Text = Convert.ToString(product.group_id);
                     txtBoxDescrp.Text = product.description;
                 }
             }

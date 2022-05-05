@@ -42,9 +42,9 @@ namespace hardware_store
             this.txtBoxSale = new System.Windows.Forms.TextBox();
             this.txtBoxPrice = new System.Windows.Forms.TextBox();
             this.txtBoxDescrp = new System.Windows.Forms.TextBox();
-            this.comboBox = new System.Windows.Forms.ComboBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtBoxGroup = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pctBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -169,14 +169,6 @@ namespace hardware_store
             this.txtBoxDescrp.Size = new System.Drawing.Size(308, 22);
             this.txtBoxDescrp.TabIndex = 11;
             // 
-            // comboBox
-            // 
-            this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(148, 293);
-            this.comboBox.Name = "comboBox";
-            this.comboBox.Size = new System.Drawing.Size(121, 24);
-            this.comboBox.TabIndex = 12;
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -196,14 +188,21 @@ namespace hardware_store
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtBoxGroup
+            // 
+            this.txtBoxGroup.Location = new System.Drawing.Point(172, 298);
+            this.txtBoxGroup.Name = "txtBoxGroup";
+            this.txtBoxGroup.Size = new System.Drawing.Size(113, 22);
+            this.txtBoxGroup.TabIndex = 14;
+            // 
             // ChangeCreateForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(215)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(537, 673);
+            this.Controls.Add(this.txtBoxGroup);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox);
             this.Controls.Add(this.txtBoxDescrp);
             this.Controls.Add(this.txtBoxPrice);
             this.Controls.Add(this.txtBoxSale);
@@ -242,8 +241,8 @@ namespace hardware_store
         private System.Windows.Forms.TextBox txtBoxSale;
         private System.Windows.Forms.TextBox txtBoxPrice;
         private System.Windows.Forms.TextBox txtBoxDescrp;
-        private System.Windows.Forms.ComboBox comboBox;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtBoxGroup;
     }
 }

@@ -19,7 +19,8 @@ namespace hardware_store
         public Label icon;
 
         public static List<ProductCard> onDelete { get; set; }
-        public int id { get; private set; }
+        public int id { get; set; }
+        public int group_id { get; set; }
         public bool IsOnDelete { get; set; }
         private bool IsOrderButtonActive = true;
         public List<OrderCard> orderCards { get; set; }
@@ -76,7 +77,6 @@ namespace hardware_store
             name.BringToFront();
 
             //pic;
-            pic.Image = Image.FromFile("гантеля.jpg");
             pic.Location = new Point(20, 85);
             pic.Size = new Size(140, 140);
             pic.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -111,6 +111,29 @@ namespace hardware_store
             Initialize();
             this.name.Text = name;
             this.description = description;
+            pic.Image = image;
+        }
+        public ProductCard(string name, string descriprtion, int group_id, int price, int sale, int in_stock, int rest)
+        {
+            Initialize();
+            this.name.Text = name;
+            this.description = descriprtion;
+            this.group_id = group_id;
+            purch_price = price;
+            this.sale = sale;
+            this.in_stock = in_stock;
+            this.rest = rest;
+        }
+        public ProductCard(string name, string descriprtion, Image image, int group_id, int price, int sale, int in_stock, int rest)
+        {
+            Initialize();
+            this.name.Text = name;
+            this.description = descriprtion;
+            this.group_id = group_id;
+            purch_price = price;
+            this.sale = sale;
+            this.in_stock = in_stock;
+            this.rest = rest;
             pic.Image = image;
         }
         public ProductCard()

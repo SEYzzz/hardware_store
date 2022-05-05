@@ -202,10 +202,6 @@ namespace hardware_store
             this.chekListGroups.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.chekListGroups.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
             this.chekListGroups.FormattingEnabled = true;
-            this.chekListGroups.Items.AddRange(new object[] {
-            "Болты",
-            "Гвозди",
-            "Кирпичи"});
             this.chekListGroups.Location = new System.Drawing.Point(3, 3);
             this.chekListGroups.Name = "chekListGroups";
             this.chekListGroups.Size = new System.Drawing.Size(136, 646);
@@ -339,10 +335,6 @@ namespace hardware_store
             this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkedListBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Items.AddRange(new object[] {
-            "Болты",
-            "Гвозди",
-            "Кирпичи"});
             this.checkedListBox1.Location = new System.Drawing.Point(5, 3);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(171, 663);
@@ -424,6 +416,8 @@ namespace hardware_store
             this.MinimumSize = new System.Drawing.Size(1600, 800);
             this.Name = "Store";
             this.Text = "Store";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Store_FormClosing);
+            this.Load += new System.EventHandler(this.Store_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);

@@ -38,6 +38,7 @@ namespace hardware_store
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblDescrp = new System.Windows.Forms.Label();
             this.lblRest = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,11 +126,22 @@ namespace hardware_store
             this.lblRest.AutoSize = true;
             this.lblRest.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblRest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.lblRest.Location = new System.Drawing.Point(352, 112);
+            this.lblRest.Location = new System.Drawing.Point(339, 110);
             this.lblRest.Name = "lblRest";
             this.lblRest.Size = new System.Drawing.Size(130, 69);
             this.lblRest.TabIndex = 7;
             this.lblRest.Text = "rest";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
+            this.richTextBox1.Location = new System.Drawing.Point(21, 490);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(461, 96);
+            this.richTextBox1.TabIndex = 8;
+            this.richTextBox1.Text = "";
             // 
             // InfoCard
             // 
@@ -137,6 +149,7 @@ namespace hardware_store
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(215)))), ((int)(((byte)(210)))));
             this.ClientSize = new System.Drawing.Size(537, 673);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.lblRest);
             this.Controls.Add(this.lblDescrp);
             this.Controls.Add(this.lblPrice);
@@ -167,5 +180,6 @@ namespace hardware_store
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblDescrp;
         private System.Windows.Forms.Label lblRest;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }

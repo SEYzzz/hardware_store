@@ -84,7 +84,6 @@ namespace hardware_store
             date_Order.AutoSize = false;
 
             //pic;
-            pic.Image = Image.FromFile("гантеля.jpg");
             pic.Location = new Point(20, 10);
             pic.Size = new Size(100, 100);
             pic.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -113,10 +112,22 @@ namespace hardware_store
             this.card = card;
             name = card.name;
         }
+        public OrderCard(DateTime date, int count, ProductCard card)
+        {
+            Initialize();
+            this.card = card;
+            pic.Image = card.pic.Image;
+            name.Text += " " + card.name.Text;
+            ord_count = count;
+            this.count.Text += " " + Convert.ToString(ord_count);
+            order_date = date;
+            date_Order.Text += " " + order_date.ToLongDateString();
+        }
         public OrderCard(ProductCard card, int count)
         {
             Initialize();
             this.card = card;
+            pic.Image = card.pic.Image;
             name.Text += " " + card.name.Text;
             ord_count = count;
             this.count.Text += " " + Convert.ToString(ord_count);
@@ -131,7 +142,7 @@ namespace hardware_store
 
         public void ToAccept_Click(object sender, EventArgs e)
         {
-            if(ord_count + card.in_stock > card.in_stock || ord_count > card.in_stock)
+            if(ord_count + card.rest > card.in_stock || ord_count > card.in_stock)
             {
                 card.in_stock = ord_count + card.rest;
                 card.rest += ord_count;
