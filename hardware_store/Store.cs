@@ -50,12 +50,12 @@ namespace hardware_store
         //вывод;
         public void Bl()
         {
-            for (int i = 0; i < 5; i++)
-            {
-                productCards.Add(new ProductCard());
-                productCards.Last().name.Text = "Name" + i;
-                productCards.Last().orderCards = orderCards;
-            }
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    productCards.Add(new ProductCard());
+            //    productCards.Last().name.Text = "Name" + i;
+            //    productCards.Last().orderCards = orderCards;
+            //}
             ProductCardsToPanel();
 
             //for (int i = 0; i < 10; i++)
@@ -101,6 +101,7 @@ namespace hardware_store
             {
                 ChangeCreateForm createForm = new ChangeCreateForm(productCards);
                 createForm.ShowDialog();
+                ProductCardsToPanel();
             }
             else
             {
@@ -140,6 +141,8 @@ namespace hardware_store
             }
             else
             {
+
+
                 for (int i = orderCards.Count - 1; i >= 0; i--)
                 {
                     if ((orderCards[i].card != null) && orderCards[i].card.IsOnDelete)
@@ -152,12 +155,16 @@ namespace hardware_store
                 {
                     if (productCards[i].IsOnDelete)
                     {
+                        DeleteFromDBprCard(productCards[i].id);
+
                         panel1.Controls.Remove(productCards[i].GetProductCard());
                         productCards.Remove(productCards[i]);
                     }                  
                 }
                 ClearProductCards();
                 ProductCardsToPanel();
+
+
 
                 button.Text = "-";
                 btnAdd.Text = "+";
@@ -171,6 +178,14 @@ namespace hardware_store
 
             }
 
+        }
+        private void DeleteFromDBprCard(int id)
+        {
+            connection.Open();
+            string sqlExpression = $"DELETE  FROM productCards WHERE id='{ id}'";
+            SQLiteCommand command = new SQLiteCommand(sqlExpression, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
         }
 
         //вывод на панель OrderCard;
@@ -359,6 +374,7 @@ namespace hardware_store
             {
                 try
                 {
+                    int id = Convert.ToInt32(dr.ItemArray[0]);
                     string name = (string)dr.ItemArray[1];
                     string descrip = (string)dr.ItemArray[2];
                     Image image = DBclass.ByteToImage((byte[])dr.ItemArray[3]);
@@ -367,7 +383,7 @@ namespace hardware_store
                     int sale = Convert.ToInt32(dr.ItemArray[6]);
                     int in_stock = Convert.ToInt32(dr.ItemArray[7]);
                     int rest = Convert.ToInt32(dr.ItemArray[8]);
-                    productCards.Add(new ProductCard(name, descrip, image, group_id, price, sale, in_stock, rest));
+                    productCards.Add(new ProductCard(id, name, descrip, image, group_id, price, sale, in_stock, rest));
                     productCards.Last().orderCards = orderCards;
                 }
                 catch (Exception exp)
@@ -409,14 +425,15 @@ namespace hardware_store
             {
                 string name = productCards[i].name.Text;
                 string descr = productCards[i].description;
-                byte[] image = DBclass.ImageToByteArray(productCards[i].pic.Image);
+                byte[] image = DBclass.ImageToByteArray(productCards[i].pic.Image);                            
                 int gr_id = productCards[i].group_id;
                 int price = productCards[i].sale;
                 int sale = productCards[i].purch_price;
                 int in_stock = 1;
                 int rest = 0;
                 SQLiteCommand command = new SQLiteCommand($"INSERT INTO productCards(name, description, image, group_id, price, sale, in_stock, rest)" +
-                    $" VALUES('{name}', '{descr}', '{image}', '{gr_id}', '{price}', '{sale}', '{in_stock}', '{rest}')", connection);
+                    $" VALUES('{name}', '{descr}', @image, '{gr_id}', '{price}', '{sale}', '{in_stock}', '{rest}')", connection);
+                command.Parameters.Add(new SQLiteParameter("@image", image));
                 command.ExecuteNonQuery();
             }
             connection.Close();

@@ -73,7 +73,7 @@ namespace hardware_store
 
         private void button1_Click(object sender, EventArgs e)
         {
-            openFileDialog1.Filter = "jpg|*.jpg";
+            openFileDialog1.Filter = "png|*.png| jpg|*.jpg";
             if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 pctBox.Image = Image.FromFile(openFileDialog1.FileName);

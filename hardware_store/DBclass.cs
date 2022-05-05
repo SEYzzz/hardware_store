@@ -26,7 +26,8 @@ namespace hardware_store
         }
         public static SQLiteConnection GetConnection()
         {
-                string pathsqlDB = "data source=info.db";
+                string pathsqlDB = "data source=";
+                pathsqlDB += Environment.CurrentDirectory.Replace(@"bin\Debug", "") + "info.db"; ;
                 SQLiteConnection connection = new SQLiteConnection(pathsqlDB);
                 return connection;        
         }

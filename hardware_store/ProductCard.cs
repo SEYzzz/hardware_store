@@ -124,9 +124,10 @@ namespace hardware_store
             this.in_stock = in_stock;
             this.rest = rest;
         }
-        public ProductCard(string name, string descriprtion, Image image, int group_id, int price, int sale, int in_stock, int rest)
+        public ProductCard(int id, string name, string descriprtion, Image image, int group_id, int price, int sale, int in_stock, int rest)
         {
             Initialize();
+            this.id = id;
             this.name.Text = name;
             this.description = descriprtion;
             this.group_id = group_id;
