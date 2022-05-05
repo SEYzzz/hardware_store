@@ -20,11 +20,12 @@ namespace hardware_store
         public Label date_Order;
         public ProductCard card;
 
+        public int id = 0;
         public DateTime order_date { get; private set; }
         public int ord_count { get; private set; }
-        public bool IsOnDelete { get; set; }
+        public bool IsOnDelete= false;
         public bool IsSubs = false;
-
+        public bool IsWritenObDB = false;
         public void Initialize()
         {
             panel = new Panel();

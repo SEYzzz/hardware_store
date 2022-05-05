@@ -76,7 +76,7 @@ namespace hardware_store
             {
                 for (int x = 0; x < X; x++)
                 {
-                    if((x + y * X + FirstProductCard) < productCards.Count)
+                    if ((x + y * X + FirstProductCard) < productCards.Count)
                     {
                         productCards[x + y * X + FirstProductCard].panel.Location = new Point(10 + x * 195, 10 + y * 250);
                         panel1.Controls.Add(productCards[x + y * X + FirstProductCard].GetProductCard());
@@ -117,7 +117,7 @@ namespace hardware_store
                     card.ToOrder.ForeColor = Color.White;
                     card.ToOrder.BackColor = Color.FromArgb(116, 142, 95);
                     card.ChangeToOrder_ToDelete_Click();
-                        
+
                 }
 
                 //btnDelete_isClicked = false;
@@ -135,13 +135,13 @@ namespace hardware_store
                 button.Text = "✓";
                 btnAdd.Text = "×";
 
-                foreach(ProductCard card in productCards)
+                foreach (ProductCard card in productCards)
                 {
                     card.ToOrder.Text = "Удалить";
                     card.ToOrder.ForeColor = Color.FromArgb(255, 136, 123);
                     card.ChangeToOrder_ToDelete_Click();
                 }
-                
+
             }
             else
             {
@@ -151,12 +151,12 @@ namespace hardware_store
                 {
                     if ((orderCards[i].card != null) && orderCards[i].card.IsOnDelete)
                     {
-                        DeleteFromDBordCard(orderCards[i].card.id);
+                        DeleteFromDBordCard(orderCards[i].id);
                         panelToOrder.Controls.Remove(orderCards[i].GetOrderCard());
                         orderCards.Remove(orderCards[i]);
                     }
                 }
-                for (int i = productCards.Count-1; i >= 0; i--)
+                for (int i = productCards.Count - 1; i >= 0; i--)
                 {
                     if (productCards[i].IsOnDelete)
                     {
@@ -164,7 +164,7 @@ namespace hardware_store
 
                         panel1.Controls.Remove(productCards[i].GetProductCard());
                         productCards.Remove(productCards[i]);
-                    }                  
+                    }
                 }
                 ClearProductCards();
                 ProductCardsToPanel();
@@ -193,7 +193,7 @@ namespace hardware_store
         private void DeleteFromDBordCard(int id_prCard)
         {
             connection.Open();
-            string sqlExpression = $"DELETE  FROM orderCards WHERE product_id='{ id_prCard}'";
+            string sqlExpression = $"DELETE  FROM orderCards WHERE id='{ id_prCard}'";
             SQLiteCommand command = new SQLiteCommand(sqlExpression, connection);
             command.ExecuteNonQuery();
             connection.Close();
@@ -238,7 +238,7 @@ namespace hardware_store
         //изменение размеров;
         private void ClearProductCards()
         {
-            foreach(ProductCard card in products_panel)
+            foreach (ProductCard card in products_panel)
             {
                 panel1.Controls.Remove(card.GetProductCard());
             }
@@ -271,7 +271,7 @@ namespace hardware_store
         //кнопки листания вверх и вниз для OrderCard;
         private void Clear_Order()
         {
-            foreach(OrderCard order in order_on_panel)
+            foreach (OrderCard order in order_on_panel)
             {
                 panelToOrder.Controls.Remove(order.GetOrderCard());
             }
@@ -319,9 +319,9 @@ namespace hardware_store
             }
             else
             {
-                if(chekListGroups.CheckedItems != null)
+                if (chekListGroups.CheckedItems != null)
                 {
-                    for(int i = chekListGroups.CheckedItems.Count - 1; i >= 0; i--)
+                    for (int i = chekListGroups.CheckedItems.Count - 1; i >= 0; i--)
                     {
                         DeleteFromDBGroups();
                         checkedListBox1.Items.Remove(chekListGroups.CheckedItems[i]);
@@ -350,11 +350,11 @@ namespace hardware_store
         //штука для удаления карточек
         private void CheckOrderCards()
         {
-            for(int i = orderCards.Count - 1; i >= 0; i--)
+            for (int i = orderCards.Count - 1; i >= 0; i--)
             {
                 if (orderCards[i].IsOnDelete)
                 {
-                    DeleteFromDBordCard(orderCards[i].card.id);
+                    DeleteFromDBordCard(orderCards[i].id);
                     panelToOrder.Controls.Remove(orderCards[i].GetOrderCard());
                     orderCards.Remove(orderCards[i]);
                 }
@@ -405,7 +405,7 @@ namespace hardware_store
         }
         private void LoadProductCards()
         {
-            foreach(DataRow dr in prCards.Rows)
+            foreach (DataRow dr in prCards.Rows)
             {
                 try
                 {
@@ -438,11 +438,13 @@ namespace hardware_store
                     int count = Convert.ToInt32(dr.ItemArray[2]);
                     int id = Convert.ToInt32(dr.ItemArray[3]);
                     //ProductCard card = productCards[Convert.ToInt32(dr.ItemArray[3])];
-                    foreach(ProductCard card in productCards)
+                    foreach (ProductCard card in productCards)
                     {
-                        if(card.id == id) 
-                            orderCards.Add(new OrderCard(date, count, card)); 
+                        if (card.id == id)
+                            orderCards.Add(new OrderCard(date, count, card));
                     }
+                    orderCards.Last().id = Convert.ToInt32(dr.ItemArray[0]);
+                    orderCards.Last().IsWritenObDB = true;
                     orderCards.Last().ToReject.Click += tabControl1_Selected;
                     orderCards.Last().ToAccept.Click += tabControl1_Selected;
 
@@ -458,15 +460,15 @@ namespace hardware_store
         //запись в бд
         private void WriteDownGroups()
         {
-            if(chekListGroups.Items.Count > group_count)
+            if (chekListGroups.Items.Count > group_count)
             {
                 connection.Open();
-                for(int i = group_count; i < chekListGroups.Items.Count; i++)
+                for (int i = group_count; i < chekListGroups.Items.Count; i++)
                 {
                     string name = chekListGroups.Items[i].ToString();
                     SQLiteCommand command = new SQLiteCommand($"INSERT INTO Groups(name) VALUES('{name}')", connection);
                     command.ExecuteNonQuery();
-                }              
+                }
                 connection.Close();
             }
         }
@@ -477,7 +479,7 @@ namespace hardware_store
             {
                 string name = productCards[i].name.Text;
                 string descr = productCards[i].description;
-                byte[] image = DBclass.ImageToByteArray(productCards[i].pic.Image);                            
+                byte[] image = DBclass.ImageToByteArray(productCards[i].pic.Image);
                 int gr_id = productCards[i].group_id;
                 int price = productCards[i].sale;
                 int sale = productCards[i].purch_price;
@@ -492,10 +494,11 @@ namespace hardware_store
         }
         private void WriteDownOrdCards()
         {
-            if(order_count < orderCards.Count)
+
+            connection.Open();
+            for (int i = 0; i < orderCards.Count; i++)
             {
-                connection.Open();
-                for (int i = order_count; i < orderCards.Count; i++)
+                if (orderCards[i].id==0)
                 {
                     DateTime date = orderCards[i].order_date;
                     int order_count = orderCards[i].ord_count;
@@ -504,8 +507,10 @@ namespace hardware_store
                         $" VALUES('{date}', '{order_count}', '{product_id}')", connection);
                     command.ExecuteNonQuery();
                 }
-                connection.Close();
+
             }
+            connection.Close();
+
         }
 
         private void Store_Load(object sender, EventArgs e)
@@ -520,7 +525,7 @@ namespace hardware_store
 
         private void Store_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            CheckOrderCards();
             WriteDownGroups();
             WriteDownOrdCards();
         }

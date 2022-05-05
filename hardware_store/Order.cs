@@ -46,7 +46,7 @@ namespace hardware_store
             if(txtBoxCount.Text.All(Char.IsDigit))
             {
                 cards.Add(new OrderCard(product, Convert.ToInt32(txtBoxCount.Text)));
-                //cards.Last().ToAccept.Click += 
+                
                 Close();
             }
             else
