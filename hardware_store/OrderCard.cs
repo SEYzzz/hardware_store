@@ -153,6 +153,7 @@ namespace hardware_store
             {
                 card.rest += ord_count;
             }
+            card.Reportpanel.CountOfProduct.Text = $"Из {card.rest} купили";
             this.IsOnDelete = true;
         }
         public void ToReject_Click(object sender, EventArgs e)

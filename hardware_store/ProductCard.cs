@@ -18,6 +18,7 @@ namespace hardware_store
         public PictureBox pic;
         public Label icon;
 
+     
         public static List<ProductCard> onDelete { get; set; }
         public int id { get; set; }
         public int group_id { get; set; }
@@ -30,6 +31,8 @@ namespace hardware_store
         public int sale { get; set; }
         public int in_stock { get; set; }
         public int rest { get; set; }
+
+        public ReportPanel Reportpanel { get; set; }
 
         private void Initialize()
         {

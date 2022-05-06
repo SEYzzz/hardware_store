@@ -32,6 +32,11 @@ namespace hardware_store
         List<ProductCard> productCards = new List<ProductCard>();
         List<ProductCard> products_panel = new List<ProductCard>();
 
+        List<ReportPanel> report_panels = new List<ReportPanel>();
+        List<ReportPanel> Show_report_panels = new List<ReportPanel>();
+        int FirstReportPanel = 0;
+
+
         List<String> groups = new List<string>();
 
         DataTable prCards = new DataTable();
@@ -43,31 +48,13 @@ namespace hardware_store
 
         public Store()
         {
+
             InitializeComponent();
             LoadDT_prCards();
             LoadDT_ordCards();
-            Bl();
+
         }
 
-        //вывод;
-        public void Bl()
-        {
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    productCards.Add(new ProductCard());
-            //    productCards.Last().name.Text = "Name" + i;
-            //    productCards.Last().orderCards = orderCards;
-            //}
-            ProductCardsToPanel();
-
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    orderCards.Add(new OrderCard());
-            //    orderCards.Last().name.Text += i;
-            //    orderCards.Last().ToReject.Click += tabControl1_Selected;
-            //    orderCards.Last().ToAccept.Click += tabControl1_Selected;
-            //}         
-        }
         private void ProductCardsToPanel()
         {
             int X = ProductCard_Wigth;
@@ -346,6 +333,65 @@ namespace hardware_store
             }
             connection.Close();
         }
+        //для закрисовки репорт карточек
+        private void CreateReporPanels()
+        {
+            for (int i = 0; i < productCards.Count; i++)
+            {
+                ReportPanel panel = new ReportPanel(productCards[i]);
+                productCards[i].Reportpanel = panel;
+                panel.Size = new Size(700, 50);
+                panel.Location = new Point(250, 50 + i * 55);
+                report_panels.Add(panel);
+                panelDockStat.Controls.Add(panel);
+
+            }
+        }
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            bool flag = true;
+            for (int i = 0; i < report_panels.Count; i++)
+            {
+                if (report_panels[i].ReadInformation.Text.Equals("")||!report_panels[i].ReadInformation.Text.All(char.IsDigit) || Convert.ToInt32(report_panels[i].ReadInformation.Text) < 0 || Convert.ToInt32(report_panels[i].ReadInformation.Text) > report_panels[i].productcard.rest)
+                {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag)
+            {
+                // $"{DateTime.Now.Day}/{DateTime.Now.Month}/{DateTime.Now.Year} {DateTime.Now.Hour}:{DateTime.Now.Minute}:{DateTime.Now.Second}" +
+                //@"C:\Users\User\" +
+          
+                string path =Directory.GetCurrentDirectory()+'\\'+"WorkReport.xlsx" ;
+                
+
+                Excel excel = new Excel(path);
+                excel.WriteToCell(0, 0, "Название");
+                excel.WriteToCell(1, 0, "Количетсов проданного");
+                excel.WriteToCell(2, 0, "Заработок");
+                int sum = 0;
+                int count = 0;
+                for (int i = 0; i < report_panels.Count; i++)
+                {
+                    excel.WriteToCell(0, i + 2, report_panels[i].productcard.name.Text);
+                    excel.WriteToCell(1, i + 2, report_panels[i].ReadInformation.Text);
+                    excel.WriteToCell(2, i + 2, (-Convert.ToInt32(report_panels[i].ReadInformation.Text) * report_panels[i].productcard.sale+ Convert.ToInt32(report_panels[i].ReadInformation.Text) * report_panels[i].productcard.purch_price).ToString());
+                    sum += -Convert.ToInt32(report_panels[i].ReadInformation.Text) * report_panels[i].productcard.sale + Convert.ToInt32(report_panels[i].ReadInformation.Text) * report_panels[i].productcard.purch_price;
+                    count += Convert.ToInt32(report_panels[i].ReadInformation.Text);
+
+                }
+                excel.WriteToCell(0, 1, "Всего");
+                excel.WriteToCell(1, 1, count.ToString());
+                excel.WriteToCell(2, 1, sum.ToString());
+                excel.SaveFiles();
+                
+            }
+            else
+            {
+                MessageBox.Show("Ошибка ввода чисел");
+            }
+        }
 
         //штука для удаления карточек
         private void CheckOrderCards()
@@ -498,7 +544,7 @@ namespace hardware_store
             connection.Open();
             for (int i = 0; i < orderCards.Count; i++)
             {
-                if (orderCards[i].id==0)
+                if (orderCards[i].id == 0)
                 {
                     DateTime date = orderCards[i].order_date;
                     int order_count = orderCards[i].ord_count;
@@ -520,6 +566,10 @@ namespace hardware_store
             LoadOrderCards();
             Program.orderCards = orderCards;
             Program.productCards = productCards;
+            ProductCard_Wigth = (panel1.Size.Width - 120) / 195;
+            ProductCard_Hight = (panel1.Size.Height - 70) / 250;
+            ProductCardsToPanel();
+            CreateReporPanels();
 
         }
 
@@ -528,7 +578,9 @@ namespace hardware_store
             CheckOrderCards();
             WriteDownGroups();
             WriteDownOrdCards();
+
         }
+
 
     }
 }

@@ -73,9 +73,10 @@ namespace hardware_store
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1582, 753);
+            this.tabControl1.Size = new System.Drawing.Size(1188, 618);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Selected += new System.Windows.Forms.TabControlEventHandler(this.tabControl1_Selected);
             // 
@@ -84,10 +85,11 @@ namespace hardware_store
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1574, 724);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage1.Size = new System.Drawing.Size(1180, 592);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Товары на складе";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -101,9 +103,10 @@ namespace hardware_store
             this.panel1.Controls.Add(this.btnAdd);
             this.panel1.Controls.Add(this.lblStuff);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(203, 3);
+            this.panel1.Location = new System.Drawing.Point(152, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1368, 718);
+            this.panel1.Size = new System.Drawing.Size(1026, 588);
             this.panel1.TabIndex = 0;
             this.panel1.Resize += new System.EventHandler(this.panel1_Resize);
             // 
@@ -115,9 +118,10 @@ namespace hardware_store
             this.btnDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDown.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
-            this.btnDown.Location = new System.Drawing.Point(1280, 638);
+            this.btnDown.Location = new System.Drawing.Point(960, 523);
+            this.btnDown.Margin = new System.Windows.Forms.Padding(2);
             this.btnDown.Name = "btnDown";
-            this.btnDown.Size = new System.Drawing.Size(74, 75);
+            this.btnDown.Size = new System.Drawing.Size(56, 61);
             this.btnDown.TabIndex = 4;
             this.btnDown.Text = "ᐯ";
             this.btnDown.UseVisualStyleBackColor = false;
@@ -131,9 +135,10 @@ namespace hardware_store
             this.btnUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnUp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
-            this.btnUp.Location = new System.Drawing.Point(1280, 542);
+            this.btnUp.Location = new System.Drawing.Point(960, 445);
+            this.btnUp.Margin = new System.Windows.Forms.Padding(2);
             this.btnUp.Name = "btnUp";
-            this.btnUp.Size = new System.Drawing.Size(74, 70);
+            this.btnUp.Size = new System.Drawing.Size(56, 57);
             this.btnUp.TabIndex = 3;
             this.btnUp.Text = "ᐱ";
             this.btnUp.UseVisualStyleBackColor = false;
@@ -147,9 +152,10 @@ namespace hardware_store
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(136)))), ((int)(((byte)(123)))));
-            this.btnDelete.Location = new System.Drawing.Point(1280, 119);
+            this.btnDelete.Location = new System.Drawing.Point(960, 97);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(74, 68);
+            this.btnDelete.Size = new System.Drawing.Size(56, 55);
             this.btnDelete.TabIndex = 2;
             this.btnDelete.Text = "-";
             this.btnDelete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -164,9 +170,10 @@ namespace hardware_store
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(165)))), ((int)(((byte)(202)))), ((int)(((byte)(135)))));
-            this.btnAdd.Location = new System.Drawing.Point(1280, 25);
+            this.btnAdd.Location = new System.Drawing.Point(960, 20);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(74, 68);
+            this.btnAdd.Size = new System.Drawing.Size(56, 55);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "+";
             this.btnAdd.UseVisualStyleBackColor = false;
@@ -177,9 +184,10 @@ namespace hardware_store
             this.lblStuff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblStuff.AutoSize = true;
             this.lblStuff.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblStuff.Location = new System.Drawing.Point(3, 670);
+            this.lblStuff.Location = new System.Drawing.Point(2, 549);
+            this.lblStuff.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStuff.Name = "lblStuff";
-            this.lblStuff.Size = new System.Drawing.Size(488, 46);
+            this.lblStuff.Size = new System.Drawing.Size(370, 37);
             this.lblStuff.TabIndex = 0;
             this.lblStuff.Text = "Всего товаров доступно:";
             // 
@@ -190,9 +198,10 @@ namespace hardware_store
             this.panel2.Controls.Add(this.btnGruopDelete);
             this.panel2.Controls.Add(this.btnGroupAdd);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Location = new System.Drawing.Point(2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 718);
+            this.panel2.Size = new System.Drawing.Size(150, 588);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -202,9 +211,10 @@ namespace hardware_store
             this.chekListGroups.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.chekListGroups.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
             this.chekListGroups.FormattingEnabled = true;
-            this.chekListGroups.Location = new System.Drawing.Point(3, 3);
+            this.chekListGroups.Location = new System.Drawing.Point(2, 2);
+            this.chekListGroups.Margin = new System.Windows.Forms.Padding(2);
             this.chekListGroups.Name = "chekListGroups";
-            this.chekListGroups.Size = new System.Drawing.Size(136, 646);
+            this.chekListGroups.Size = new System.Drawing.Size(102, 525);
             this.chekListGroups.TabIndex = 2;
             // 
             // btnGruopDelete
@@ -215,9 +225,10 @@ namespace hardware_store
             this.btnGruopDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGruopDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnGruopDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
-            this.btnGruopDelete.Location = new System.Drawing.Point(83, 670);
+            this.btnGruopDelete.Location = new System.Drawing.Point(62, 549);
+            this.btnGruopDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnGruopDelete.Name = "btnGruopDelete";
-            this.btnGruopDelete.Size = new System.Drawing.Size(53, 43);
+            this.btnGruopDelete.Size = new System.Drawing.Size(40, 35);
             this.btnGruopDelete.TabIndex = 1;
             this.btnGruopDelete.Text = "-";
             this.btnGruopDelete.UseVisualStyleBackColor = false;
@@ -231,9 +242,10 @@ namespace hardware_store
             this.btnGroupAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGroupAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnGroupAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(252)))), ((int)(((byte)(238)))), ((int)(((byte)(141)))));
-            this.btnGroupAdd.Location = new System.Drawing.Point(142, 670);
+            this.btnGroupAdd.Location = new System.Drawing.Point(106, 549);
+            this.btnGroupAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnGroupAdd.Name = "btnGroupAdd";
-            this.btnGroupAdd.Size = new System.Drawing.Size(52, 43);
+            this.btnGroupAdd.Size = new System.Drawing.Size(39, 35);
             this.btnGroupAdd.TabIndex = 0;
             this.btnGroupAdd.Text = "+";
             this.btnGroupAdd.UseVisualStyleBackColor = false;
@@ -243,10 +255,11 @@ namespace hardware_store
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
             this.tabPage2.Controls.Add(this.panelToOrder);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1574, 724);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(1180, 592);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Заказ товаров";
             // 
@@ -256,11 +269,11 @@ namespace hardware_store
             this.panelToOrder.Controls.Add(this.btnDown2);
             this.panelToOrder.Controls.Add(this.lblOrders);
             this.panelToOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelToOrder.Location = new System.Drawing.Point(3, 3);
+            this.panelToOrder.Location = new System.Drawing.Point(2, 2);
+            this.panelToOrder.Margin = new System.Windows.Forms.Padding(2);
             this.panelToOrder.Name = "panelToOrder";
-            this.panelToOrder.Size = new System.Drawing.Size(1568, 718);
+            this.panelToOrder.Size = new System.Drawing.Size(1176, 588);
             this.panelToOrder.TabIndex = 0;
-            this.panelToOrder.Resize += new System.EventHandler(this.tabControl1_Selected);
             // 
             // btnUp2
             // 
@@ -270,9 +283,10 @@ namespace hardware_store
             this.btnUp2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnUp2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
-            this.btnUp2.Location = new System.Drawing.Point(1509, 609);
+            this.btnUp2.Location = new System.Drawing.Point(1132, 500);
+            this.btnUp2.Margin = new System.Windows.Forms.Padding(2);
             this.btnUp2.Name = "btnUp2";
-            this.btnUp2.Size = new System.Drawing.Size(54, 50);
+            this.btnUp2.Size = new System.Drawing.Size(40, 41);
             this.btnUp2.TabIndex = 2;
             this.btnUp2.Text = "ᐱ";
             this.btnUp2.UseVisualStyleBackColor = false;
@@ -286,9 +300,10 @@ namespace hardware_store
             this.btnDown2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDown2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
-            this.btnDown2.Location = new System.Drawing.Point(1509, 665);
+            this.btnDown2.Location = new System.Drawing.Point(1132, 545);
+            this.btnDown2.Margin = new System.Windows.Forms.Padding(2);
             this.btnDown2.Name = "btnDown2";
-            this.btnDown2.Size = new System.Drawing.Size(54, 50);
+            this.btnDown2.Size = new System.Drawing.Size(40, 41);
             this.btnDown2.TabIndex = 1;
             this.btnDown2.Text = "ᐯ";
             this.btnDown2.UseVisualStyleBackColor = false;
@@ -300,9 +315,10 @@ namespace hardware_store
             this.lblOrders.AutoSize = true;
             this.lblOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblOrders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.lblOrders.Location = new System.Drawing.Point(0, 672);
+            this.lblOrders.Location = new System.Drawing.Point(0, 551);
+            this.lblOrders.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOrders.Name = "lblOrders";
-            this.lblOrders.Size = new System.Drawing.Size(421, 46);
+            this.lblOrders.Size = new System.Drawing.Size(329, 37);
             this.lblOrders.TabIndex = 0;
             this.lblOrders.Text = "Заказов в обработке:";
             // 
@@ -310,10 +326,11 @@ namespace hardware_store
             // 
             this.tabPage3.Controls.Add(this.panelLeftStat);
             this.tabPage3.Controls.Add(this.panelDockStat);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1574, 724);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage3.Size = new System.Drawing.Size(1180, 592);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Статисткиа";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -323,9 +340,10 @@ namespace hardware_store
             this.panelLeftStat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(215)))), ((int)(((byte)(210)))));
             this.panelLeftStat.Controls.Add(this.checkedListBox1);
             this.panelLeftStat.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelLeftStat.Location = new System.Drawing.Point(3, 3);
+            this.panelLeftStat.Location = new System.Drawing.Point(2, 2);
+            this.panelLeftStat.Margin = new System.Windows.Forms.Padding(2);
             this.panelLeftStat.Name = "panelLeftStat";
-            this.panelLeftStat.Size = new System.Drawing.Size(200, 718);
+            this.panelLeftStat.Size = new System.Drawing.Size(150, 588);
             this.panelLeftStat.TabIndex = 1;
             this.panelLeftStat.Paint += new System.Windows.Forms.PaintEventHandler(this.panelLeftStat_Paint);
             // 
@@ -335,9 +353,10 @@ namespace hardware_store
             this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkedListBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(5, 3);
+            this.checkedListBox1.Location = new System.Drawing.Point(4, 2);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(2);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(171, 663);
+            this.checkedListBox1.Size = new System.Drawing.Size(128, 525);
             this.checkedListBox1.TabIndex = 0;
             // 
             // panelDockStat
@@ -348,9 +367,10 @@ namespace hardware_store
             this.panelDockStat.Controls.Add(this.btnReport);
             this.panelDockStat.Controls.Add(this.button1);
             this.panelDockStat.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDockStat.Location = new System.Drawing.Point(3, 3);
+            this.panelDockStat.Location = new System.Drawing.Point(2, 2);
+            this.panelDockStat.Margin = new System.Windows.Forms.Padding(2);
             this.panelDockStat.Name = "panelDockStat";
-            this.panelDockStat.Size = new System.Drawing.Size(1568, 718);
+            this.panelDockStat.Size = new System.Drawing.Size(1176, 588);
             this.panelDockStat.TabIndex = 0;
             // 
             // btnUp3
@@ -361,9 +381,10 @@ namespace hardware_store
             this.btnUp3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUp3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnUp3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
-            this.btnUp3.Location = new System.Drawing.Point(1503, 592);
+            this.btnUp3.Location = new System.Drawing.Point(1127, 486);
+            this.btnUp3.Margin = new System.Windows.Forms.Padding(2);
             this.btnUp3.Name = "btnUp3";
-            this.btnUp3.Size = new System.Drawing.Size(60, 60);
+            this.btnUp3.Size = new System.Drawing.Size(45, 49);
             this.btnUp3.TabIndex = 3;
             this.btnUp3.Text = "ᐱ";
             this.btnUp3.UseVisualStyleBackColor = false;
@@ -376,9 +397,10 @@ namespace hardware_store
             this.btnDown3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDown3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnDown3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
-            this.btnDown3.Location = new System.Drawing.Point(1503, 658);
+            this.btnDown3.Location = new System.Drawing.Point(1127, 540);
+            this.btnDown3.Margin = new System.Windows.Forms.Padding(2);
             this.btnDown3.Name = "btnDown3";
-            this.btnDown3.Size = new System.Drawing.Size(60, 60);
+            this.btnDown3.Size = new System.Drawing.Size(45, 49);
             this.btnDown3.TabIndex = 2;
             this.btnDown3.Text = "ᐯ";
             this.btnDown3.UseVisualStyleBackColor = false;
@@ -390,30 +412,34 @@ namespace hardware_store
             this.btnReport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
             this.btnReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReport.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.btnReport.Location = new System.Drawing.Point(1330, 661);
+            this.btnReport.Location = new System.Drawing.Point(998, 542);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(2);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(167, 54);
+            this.btnReport.Size = new System.Drawing.Size(125, 44);
             this.btnReport.TabIndex = 1;
             this.btnReport.Text = "Создать отчёт";
             this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(56, 19);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // Store
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1582, 753);
+            this.ClientSize = new System.Drawing.Size(1188, 618);
             this.Controls.Add(this.tabControl1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(1600, 800);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(1204, 657);
             this.Name = "Store";
             this.Text = "Store";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Store_FormClosing);
