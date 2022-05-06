@@ -50,7 +50,7 @@ namespace hardware_store
             this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
             this.btnChange.Location = new System.Drawing.Point(56, 483);
-            this.btnChange.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnChange.Margin = new System.Windows.Forms.Padding(2);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(268, 54);
             this.btnChange.TabIndex = 0;
@@ -61,7 +61,7 @@ namespace hardware_store
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(16, 18);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(208, 213);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -79,6 +79,7 @@ namespace hardware_store
             this.lblGroup.Size = new System.Drawing.Size(101, 29);
             this.lblGroup.TabIndex = 2;
             this.lblGroup.Text = "Группа:";
+            this.lblGroup.Visible = false;
             // 
             // lblName
             // 
@@ -145,7 +146,7 @@ namespace hardware_store
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
             this.richTextBox1.Location = new System.Drawing.Point(16, 398);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Size = new System.Drawing.Size(347, 79);
@@ -168,7 +169,7 @@ namespace hardware_store
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnChange);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(420, 592);
             this.MinimumSize = new System.Drawing.Size(420, 592);
             this.Name = "InfoCard";

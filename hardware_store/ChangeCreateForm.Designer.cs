@@ -51,9 +51,10 @@ namespace hardware_store
             // pctBox
             // 
             this.pctBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(244)))), ((int)(((byte)(233)))));
-            this.pctBox.Location = new System.Drawing.Point(22, 29);
+            this.pctBox.Location = new System.Drawing.Point(16, 24);
+            this.pctBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pctBox.Name = "pctBox";
-            this.pctBox.Size = new System.Drawing.Size(260, 243);
+            this.pctBox.Size = new System.Drawing.Size(195, 197);
             this.pctBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pctBox.TabIndex = 0;
             this.pctBox.TabStop = false;
@@ -63,20 +64,23 @@ namespace hardware_store
             this.lblGroup.AutoSize = true;
             this.lblGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.lblGroup.Location = new System.Drawing.Point(16, 285);
+            this.lblGroup.Location = new System.Drawing.Point(12, 232);
+            this.lblGroup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGroup.Name = "lblGroup";
-            this.lblGroup.Size = new System.Drawing.Size(125, 36);
+            this.lblGroup.Size = new System.Drawing.Size(101, 29);
             this.lblGroup.TabIndex = 1;
             this.lblGroup.Text = "Группа:";
+            this.lblGroup.Visible = false;
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.lblName.Location = new System.Drawing.Point(16, 321);
+            this.lblName.Location = new System.Drawing.Point(12, 261);
+            this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(162, 36);
+            this.lblName.Size = new System.Drawing.Size(132, 29);
             this.lblName.TabIndex = 2;
             this.lblName.Text = "Название:";
             // 
@@ -85,9 +89,10 @@ namespace hardware_store
             this.lblCostSale.AutoSize = true;
             this.lblCostSale.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblCostSale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.lblCostSale.Location = new System.Drawing.Point(16, 357);
+            this.lblCostSale.Location = new System.Drawing.Point(12, 290);
+            this.lblCostSale.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCostSale.Name = "lblCostSale";
-            this.lblCostSale.Size = new System.Drawing.Size(325, 36);
+            this.lblCostSale.Size = new System.Drawing.Size(255, 29);
             this.lblCostSale.TabIndex = 3;
             this.lblCostSale.Text = "Стоимость продажи:";
             // 
@@ -96,9 +101,10 @@ namespace hardware_store
             this.lblPrice.AutoSize = true;
             this.lblPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.lblPrice.Location = new System.Drawing.Point(16, 393);
+            this.lblPrice.Location = new System.Drawing.Point(12, 319);
+            this.lblPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrice.Name = "lblPrice";
-            this.lblPrice.Size = new System.Drawing.Size(306, 36);
+            this.lblPrice.Size = new System.Drawing.Size(243, 29);
             this.lblPrice.TabIndex = 4;
             this.lblPrice.Text = "Стоимость закупки:";
             // 
@@ -107,9 +113,10 @@ namespace hardware_store
             this.lblDiscrp.AutoSize = true;
             this.lblDiscrp.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblDiscrp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.lblDiscrp.Location = new System.Drawing.Point(16, 429);
+            this.lblDiscrp.Location = new System.Drawing.Point(12, 349);
+            this.lblDiscrp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDiscrp.Name = "lblDiscrp";
-            this.lblDiscrp.Size = new System.Drawing.Size(165, 36);
+            this.lblDiscrp.Size = new System.Drawing.Size(137, 29);
             this.lblDiscrp.TabIndex = 5;
             this.lblDiscrp.Text = "Описание:";
             // 
@@ -119,9 +126,10 @@ namespace hardware_store
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSave.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(142)))), ((int)(((byte)(95)))));
-            this.btnSave.Location = new System.Drawing.Point(22, 590);
+            this.btnSave.Location = new System.Drawing.Point(16, 479);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(235, 57);
+            this.btnSave.Size = new System.Drawing.Size(176, 46);
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -133,9 +141,10 @@ namespace hardware_store
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(136)))), ((int)(((byte)(123)))));
-            this.btnCancel.Location = new System.Drawing.Point(263, 590);
+            this.btnCancel.Location = new System.Drawing.Point(197, 479);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(243, 57);
+            this.btnCancel.Size = new System.Drawing.Size(182, 46);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -143,30 +152,34 @@ namespace hardware_store
             // 
             // txtBoxName
             // 
-            this.txtBoxName.Location = new System.Drawing.Point(185, 332);
+            this.txtBoxName.Location = new System.Drawing.Point(139, 270);
+            this.txtBoxName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxName.Name = "txtBoxName";
-            this.txtBoxName.Size = new System.Drawing.Size(156, 22);
+            this.txtBoxName.Size = new System.Drawing.Size(118, 20);
             this.txtBoxName.TabIndex = 8;
             // 
             // txtBoxSale
             // 
-            this.txtBoxSale.Location = new System.Drawing.Point(348, 370);
+            this.txtBoxSale.Location = new System.Drawing.Point(261, 301);
+            this.txtBoxSale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxSale.Name = "txtBoxSale";
-            this.txtBoxSale.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxSale.Size = new System.Drawing.Size(76, 20);
             this.txtBoxSale.TabIndex = 9;
             // 
             // txtBoxPrice
             // 
-            this.txtBoxPrice.Location = new System.Drawing.Point(329, 406);
+            this.txtBoxPrice.Location = new System.Drawing.Point(247, 330);
+            this.txtBoxPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxPrice.Name = "txtBoxPrice";
-            this.txtBoxPrice.Size = new System.Drawing.Size(100, 22);
+            this.txtBoxPrice.Size = new System.Drawing.Size(76, 20);
             this.txtBoxPrice.TabIndex = 10;
             // 
             // txtBoxDescrp
             // 
-            this.txtBoxDescrp.Location = new System.Drawing.Point(198, 442);
+            this.txtBoxDescrp.Location = new System.Drawing.Point(148, 359);
+            this.txtBoxDescrp.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxDescrp.Name = "txtBoxDescrp";
-            this.txtBoxDescrp.Size = new System.Drawing.Size(308, 22);
+            this.txtBoxDescrp.Size = new System.Drawing.Size(232, 20);
             this.txtBoxDescrp.TabIndex = 11;
             // 
             // openFileDialog1
@@ -180,9 +193,10 @@ namespace hardware_store
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(136)))), ((int)(((byte)(137)))));
-            this.button1.Location = new System.Drawing.Point(329, 104);
+            this.button1.Location = new System.Drawing.Point(247, 84);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 47);
+            this.button1.Size = new System.Drawing.Size(133, 38);
             this.button1.TabIndex = 13;
             this.button1.Text = "Выбрать фото";
             this.button1.UseVisualStyleBackColor = false;
@@ -190,17 +204,21 @@ namespace hardware_store
             // 
             // txtBoxGroup
             // 
-            this.txtBoxGroup.Location = new System.Drawing.Point(172, 298);
+            this.txtBoxGroup.Location = new System.Drawing.Point(129, 242);
+            this.txtBoxGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBoxGroup.Name = "txtBoxGroup";
-            this.txtBoxGroup.Size = new System.Drawing.Size(113, 22);
+            this.txtBoxGroup.ReadOnly = true;
+            this.txtBoxGroup.Size = new System.Drawing.Size(86, 20);
             this.txtBoxGroup.TabIndex = 14;
+            this.txtBoxGroup.Text = "1";
+            this.txtBoxGroup.Visible = false;
             // 
             // ChangeCreateForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(215)))), ((int)(((byte)(210)))));
-            this.ClientSize = new System.Drawing.Size(537, 673);
+            this.ClientSize = new System.Drawing.Size(404, 553);
             this.Controls.Add(this.txtBoxGroup);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtBoxDescrp);
@@ -216,8 +234,9 @@ namespace hardware_store
             this.Controls.Add(this.lblGroup);
             this.Controls.Add(this.pctBox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximumSize = new System.Drawing.Size(555, 720);
-            this.MinimumSize = new System.Drawing.Size(555, 720);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(420, 592);
+            this.MinimumSize = new System.Drawing.Size(420, 592);
             this.Name = "ChangeCreateForm";
             this.Text = "ChangeForm";
             this.Load += new System.EventHandler(this.ChangeCreateForm_Load);

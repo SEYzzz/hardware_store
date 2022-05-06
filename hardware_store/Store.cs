@@ -90,7 +90,8 @@ namespace hardware_store
             if (button.Text.Equals("+"))
             {
                 ChangeCreateForm createForm = new ChangeCreateForm(productCards, orderCards);
-                createForm.ShowDialog();
+                createForm.ShowDialog(); 
+                CreateReporPanels();
                 WriteDownPrCards();
                 ProductCardsToPanel();
             }
@@ -338,12 +339,16 @@ namespace hardware_store
         {
             for (int i = 0; i < productCards.Count; i++)
             {
-                ReportPanel panel = new ReportPanel(productCards[i]);
-                productCards[i].Reportpanel = panel;
-                panel.Size = new Size(700, 50);
-                panel.Location = new Point(250, 50 + i * 55);
-                report_panels.Add(panel);
-                panelDockStat.Controls.Add(panel);
+                if (productCards[i].Reportpanel == null)
+                {
+                    ReportPanel panel = new ReportPanel(productCards[i]);
+                    productCards[i].Reportpanel = panel;
+                    panel.Size = new Size(700, 50);
+                    panel.Location = new Point(250, 50 + i * 55);
+                    report_panels.Add(panel);
+                    panelDockStat.Controls.Add(panel);
+
+                }
 
             }
         }

@@ -49,7 +49,7 @@ namespace hardware_store
                 {
                     string name = txtBoxName.Text;
                     string descr = txtBoxDescrp.Text;
-                    int gr_id = Convert.ToInt32(txtBoxGroup.Text);
+                    int gr_id = 1;
                     Image image = pctBox.Image;
                     int price = Convert.ToInt32(txtBoxSale.Text);
                     int sale = Convert.ToInt32(txtBoxPrice.Text);
