@@ -55,6 +55,8 @@ namespace hardware_store
             this.btnDown3 = new System.Windows.Forms.Button();
             this.btnReport = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.UmeletzMeniPicture = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -64,6 +66,8 @@ namespace hardware_store
             this.tabPage3.SuspendLayout();
             this.panelLeftStat.SuspendLayout();
             this.panelDockStat.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.UmeletzMeniPicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -194,6 +198,7 @@ namespace hardware_store
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(215)))), ((int)(((byte)(210)))));
+            this.panel2.Controls.Add(this.UmeletzMeniPicture);
             this.panel2.Controls.Add(this.chekListGroups);
             this.panel2.Controls.Add(this.btnGruopDelete);
             this.panel2.Controls.Add(this.btnGroupAdd);
@@ -338,6 +343,7 @@ namespace hardware_store
             // panelLeftStat
             // 
             this.panelLeftStat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(215)))), ((int)(((byte)(210)))));
+            this.panelLeftStat.Controls.Add(this.pictureBox1);
             this.panelLeftStat.Controls.Add(this.checkedListBox1);
             this.panelLeftStat.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLeftStat.Location = new System.Drawing.Point(2, 2);
@@ -431,6 +437,30 @@ namespace hardware_store
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // UmeletzMeniPicture
+            // 
+            this.UmeletzMeniPicture.BackColor = System.Drawing.Color.Transparent;
+            this.UmeletzMeniPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.UmeletzMeniPicture.Dock = System.Windows.Forms.DockStyle.Left;
+            this.UmeletzMeniPicture.Image = ((System.Drawing.Image)(resources.GetObject("UmeletzMeniPicture.Image")));
+            this.UmeletzMeniPicture.Location = new System.Drawing.Point(0, 0);
+            this.UmeletzMeniPicture.Name = "UmeletzMeniPicture";
+            this.UmeletzMeniPicture.Size = new System.Drawing.Size(150, 588);
+            this.UmeletzMeniPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UmeletzMeniPicture.TabIndex = 3;
+            this.UmeletzMeniPicture.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(150, 588);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // Store
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -455,6 +485,8 @@ namespace hardware_store
             this.tabPage3.ResumeLayout(false);
             this.panelLeftStat.ResumeLayout(false);
             this.panelDockStat.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.UmeletzMeniPicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -486,6 +518,8 @@ namespace hardware_store
         private System.Windows.Forms.Button btnDown2;
         private System.Windows.Forms.Button btnUp3;
         private System.Windows.Forms.Button btnDown3;
+        private System.Windows.Forms.PictureBox UmeletzMeniPicture;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

@@ -561,6 +561,9 @@ namespace hardware_store
 
         private void Store_Load(object sender, EventArgs e)
         {
+           
+        
+            
             LoadGroups();
             LoadProductCards();
             LoadOrderCards();
@@ -572,6 +575,7 @@ namespace hardware_store
             CreateReporPanels();
 
         }
+
 
         private void Store_FormClosing(object sender, FormClosingEventArgs e)
         {
